@@ -1,0 +1,18 @@
+{
+    "attempt_id": "20261003T090003-cccccccccccc",
+    "provider": null,
+    "requested_model": "gpt-5.6-luna",
+    "returned_model": null,
+    "execution_mode": null,
+    "provider_request_id": null,
+    "batch_id": null,
+    "usage": {
+        "input_tokens": 2000,
+        "output_tokens": 900,
+        "cache_read_tokens": 1500,
+        "cache_write_tokens": null,
+        "estimated_cost": null,
+        "available": true
+    },
+    "raw_payload_sha256": "9ed8bfb081893fca1e860832215a31d082f69118a02dad5a069e38029b7bfec1"
+}

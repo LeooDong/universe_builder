@@ -1,0 +1,49 @@
+# Atoms that share a declared name but are DIFFERENT THINGS.
+#
+# The mirror of `aliases.txt`. That file says "these spellings are one topic";
+# this one says "these atoms are not, whatever their names suggest". Both exist
+# because a shared name is evidence, not proof — and here the evidence is
+# routinely wrong: two pharaohs share a prenomen, two Cairo gates share an
+# epithet, two cities a hundred miles apart share a Greek root.
+#
+# Without this file every `universe_builder duplicates` run resurfaces the same false
+# positives, and sooner or later someone merges Nice into Nicaea.
+#
+# Format, one claim per line, names as the atoms spell them:
+#
+#     Thutmose I != Thutmose IV
+#
+# A component whose atoms are covered by one of these lines is reported as
+# "declared distinct" and never retired. Lines are global; the comparison folds
+# case and punctuation, like every other name comparison in this project.
+
+# This is a sample written for the example pack, not a curated table.
+
+# --- People: a shared regnal or personal name is not an identity ---
+Thutmose I != Thutmose IV
+Rameses II != Rameses III
+Darius I != Darius III
+Cyrus the Great != Cyrus the Younger
+Philip II of Macedon != Philip II of Spain
+Alexander the Great != Alexander I of Epirus
+Justinian I != Justinian II
+Ptolemy I Soter != Claudius Ptolemy
+Leo III the Isaurian != Pope Leo III
+
+# --- Places: a shared root or epithet is not an identity ---
+Nicaea != Nice
+Thebes (Luxor) != Thebes (Boeotia)
+Alexandria != Alexandria Eschate
+Antioch != Antioch in Pisidia
+Carthage != New Carthage
+Memphis (Egypt) != Memphis (Tennessee)
+Heliopolis (Egypt) != Heliopolis (Baalbek)
+Babylon != Babylon Fortress
+Ur != Uruk
+Sardis != Sardinia
+Philadelphia (Amman) != Philadelphia (Alaşehir) != Philadelphia (Pennsylvania)
+
+# --- Works and things: a shared title is not an identity ---
+Book of the Dead != Tibetan Book of the Dead
+Pantheon (Rome) != Panthéon (Paris)
+Shahnameh != Shahnameh of Shah Tahmasp

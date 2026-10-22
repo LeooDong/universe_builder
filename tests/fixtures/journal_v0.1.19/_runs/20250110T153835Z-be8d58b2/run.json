@@ -1,0 +1,20 @@
+{
+    "run_id": "20250110T153835Z-be8d58b2",
+    "started_utc": "2025-01-10T15:38:35.522937Z",
+    "log_schema_version": 1,
+    "code_revision": "0000000000000000000000000000000000000011",
+    "resolved_config_sha256": "723e6743a8297f203b41695533cc5cf68514d4333c765dc8090c709cdb5586a2",
+    "config": {
+        "phase": "verify",
+        "atoms": [
+            "discovery"
+        ],
+        "model": "gpt-5-nano",
+        "source": "phases.<phase> -> tiers.openai.economy",
+        "limit": 1,
+        "batch": false
+    },
+    "models": {
+        "verify": "gpt-5-nano"
+    }
+}

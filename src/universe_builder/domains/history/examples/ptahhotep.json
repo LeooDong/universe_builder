@@ -1,0 +1,123 @@
+{
+  "name": {
+    "common": "Ptahhotep",
+    "otherNames": [
+      "Ptahhotep the Elder",
+      "Ptahhotep I"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ptahhotep"
+    ],
+    "meaningOfNames": [
+      "The name 'Ptahhotep' means 'He whom Ptah has given.' Ptah is the ancient Egyptian god of craftsmanship and creation."
+    ],
+    "longFormInfo": []
+  },
+  "birth": {
+    "date": {
+      "year": null,
+      "month": null,
+      "day": null,
+      "era": "BCE",
+      "certainty": "low",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ptahhotep"
+      ],
+      "longFormInfo": [
+        "The exact date of Ptahhotep's birth is unknown, but he is believed to have lived during the Fifth Dynasty of Egypt, around 2400 BCE."
+      ]
+    },
+    "location": {
+      "landmark": null,
+      "city": "Memphis",
+      "state": null,
+      "country": "Egypt",
+      "latitude": 29.8494,
+      "longitude": 31.2497,
+      "certainty": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ptahhotep"
+      ]
+    }
+  },
+  "death": {
+    "date": {
+      "year": null,
+      "month": null,
+      "day": null,
+      "era": "BCE",
+      "certainty": "low",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ptahhotep"
+      ],
+      "longFormInfo": [
+        "The exact date of Ptahhotep's death is unknown, but he is believed to have died sometime after the Fifth Dynasty, possibly around 2300 BCE."
+      ]
+    },
+    "location": {
+      "landmark": null,
+      "city": "Memphis",
+      "state": null,
+      "country": "Egypt",
+      "latitude": 29.8494,
+      "longitude": 31.2497,
+      "certainty": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ptahhotep"
+      ]
+    },
+    "reason": {
+      "causeOfDeath": null,
+      "diseases": []
+    }
+  },
+  "judgments": {
+    "politicalInfluenceInfo": "Ptahhotep served as a vizier and is known for his wisdom and guidance in governance, influencing future generations of leaders.",
+    "politicalInfluenceScore": 8,
+    "culturalContributionInfo": "He is credited with writing one of the earliest known works of literature, 'The Maxims of Ptahhotep,' which provides ethical and moral guidance.",
+    "culturalContributionScore": 9,
+    "scientificAdvancementInfo": null,
+    "scientificAdvancementScore": 0,
+    "ethicalLegacyInfo": "His teachings emphasise ethics, morality, and the importance of wisdom in leadership.",
+    "ethicalLegacyScore": 8,
+    "economicImpactInfo": null,
+    "economicImpactScore": 0,
+    "militaryImpactInfo": null,
+    "militaryImpactScore": 0,
+    "surpriseOfImpactInfo": "Given his role as a vizier and the content of his writings, it is surprising how influential his thoughts on governance and ethics have remained.",
+    "surpriseOfImpactScore": 7,
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ptahhotep"
+    ]
+  },
+  "family": {
+    "parents": [],
+    "children": [],
+    "spouses": [],
+    "otherRelatives": [],
+    "familyBackground": [
+      "Ptahhotep was a high-ranking official in ancient Egypt, serving as vizier during the Fifth Dynasty."
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ptahhotep"
+    ]
+  },
+  "occupationOrRole": "Vizier and Philosopher",
+  "shortSummary": "Ptahhotep was an ancient Egyptian vizier known for his wisdom and ethical teachings.",
+  "longSummary": [
+    "Ptahhotep is best known for his work 'The Maxims of Ptahhotep,' which is a collection of moral and ethical teachings that has influenced Egyptian thought for centuries.",
+    "He served as vizier during the Fifth Dynasty and is considered one of the earliest philosophers in history."
+  ],
+  "curiousFact": [
+    "Ptahhotep's teachings are among the oldest surviving texts in the world, dating back over 4,000 years."
+  ],
+  "achievements": [
+    "Authored 'The Maxims of Ptahhotep,' one of the earliest works of literature.",
+    "Served as vizier, providing guidance and wisdom to the Pharaoh."
+  ],
+  "legacy": [
+    "His writings have had a lasting impact on Egyptian literature and philosophy.",
+    "Ptahhotep is remembered as a symbol of wisdom and ethical governance."
+  ],
+  "referencesInPopCulture": []
+}

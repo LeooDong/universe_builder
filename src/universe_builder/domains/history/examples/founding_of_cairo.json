@@ -1,0 +1,87 @@
+{
+  "name": {
+    "common": "Founding of Cairo as the new capital of Egypt",
+    "otherNames": [],
+    "sources": [
+      "Historical records",
+      "Scholarly articles on Egyptian history"
+    ],
+    "meaningOfNames": [
+      "Cairo is derived from the Arabic name 'Al-Qāhirah', meaning 'The Victorious'."
+    ],
+    "longFormInfo": [
+      "The founding of Cairo marked a significant shift in the political and cultural landscape of Egypt."
+    ]
+  },
+  "eventStart": {
+    "date": {
+      "year": 969,
+      "month": null,
+      "day": null,
+      "era": "CE",
+      "certainty": "high",
+      "sources": [
+        "Historical texts",
+        "Archaeological findings"
+      ],
+      "longFormInfo": [
+        "Cairo was founded in 969 CE by the Fatimid dynasty."
+      ]
+    },
+    "location": {
+      "landmark": "Cairo",
+      "city": "Cairo",
+      "state": null,
+      "country": "Egypt",
+      "latitude": 30.0444,
+      "longitude": 31.2357,
+      "certainty": "high",
+      "sources": [
+        "Geographical data",
+        "Historical maps"
+      ]
+    }
+  },
+  "eventEnd": {
+    "date": {
+      "year": null,
+      "month": null,
+      "day": null,
+      "era": null,
+      "certainty": "none",
+      "sources": [],
+      "longFormInfo": []
+    },
+    "location": {
+      "landmark": "Cairo",
+      "city": "Cairo",
+      "state": null,
+      "country": "Egypt",
+      "latitude": 30.0444,
+      "longitude": 31.2357,
+      "certainty": "high",
+      "sources": [
+        "Current geographical data",
+        "Government records"
+      ]
+    }
+  },
+  "significance": "The founding of Cairo established it as a major political, cultural, and economic centre in the Islamic world.",
+  "legacy": "Cairo has evolved into one of the largest and most influential cities in the Arab world, with a rich history that continues to shape its identity.",
+  "shortSummary": "Cairo was founded in 969 CE by the Fatimid dynasty as the new capital of Egypt.",
+  "longSummary": [
+    "The founding of Cairo was a pivotal moment in Egyptian history, as it replaced Fustat as the capital and became a centre of Islamic learning and culture.",
+    "Cairo's strategic location along the Nile River facilitated trade and communication, contributing to its rapid growth and development.",
+    "Over the centuries, Cairo has witnessed significant historical events and has been home to numerous dynasties, making it a melting pot of cultures and traditions."
+  ],
+  "participants": [
+    {
+      "name": "Jawhar al-Siqilli",
+      "role": "Fatimid general who conquered Egypt and laid out the city"
+    },
+    {
+      "name": "al-Mu'izz li-Din Allah",
+      "role": "Fatimid caliph who ordered it and moved his court there in 973"
+    }
+  ]
+}

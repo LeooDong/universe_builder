@@ -1,0 +1,25 @@
+{
+    "run_id": "20250101T210856Z-cfc785a0",
+    "started_utc": "2025-01-01T21:08:56.926377Z",
+    "log_schema_version": 1,
+    "code_revision": "0000000000000000000000000000000000000008",
+    "resolved_config_sha256": "ad42aa6dc7f3c63e8a1c405a8a8349fba3429e8a2deeb34b547742b5bd59a64e",
+    "config": {
+        "phase": "history",
+        "atoms": [
+            "artifact",
+            "city",
+            "discovery",
+            "event",
+            "history",
+            "person"
+        ],
+        "model": "gpt-6-astra",
+        "source": "phases.<phase> -> tiers.openai.frontier",
+        "limit": null,
+        "batch": false
+    },
+    "models": {
+        "history": "gpt-6-astra"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "run_id": "20250119T223026Z-85c4ee67",
+    "started_utc": "2025-01-19T22:30:26.660405Z",
+    "log_schema_version": 1,
+    "code_revision": null,
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.19",
+            "git_revision": null
+        },
+        "pack": {
+            "name": "history",
+            "module": "pack",
+            "distribution": "pack",
+            "version": "0.2.0"
+        }
+    },
+    "resolved_config_sha256": "630dc5f217bc6c7b4b61309d60f9b68e4c549b580bb083123260a6aec12683f7",
+    "config": {
+        "command": "period-polities-constrained",
+        "model": "gpt-6-luna",
+        "calls": 960
+    },
+    "models": null
+}

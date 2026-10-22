@@ -1,0 +1,26 @@
+{
+    "run_id": "20250119T065009Z-ce5a5cd9",
+    "started_utc": "2025-01-19T06:50:09.472528Z",
+    "log_schema_version": 1,
+    "code_revision": null,
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.14",
+            "git_revision": null
+        },
+        "pack": {
+            "name": "history",
+            "module": "pack",
+            "distribution": "pack",
+            "version": "0.2.0"
+        }
+    },
+    "resolved_config_sha256": "32e95bfccf9cc840189d8d4d9c268145b8837996507411eb74f28a84ebb255b4",
+    "config": {
+        "command": "fold-history",
+        "from": "history_h0000000000000101_subject_1_gpt-4-turbo.json",
+        "into": "history_h0000000000000101_subject_1_gpt-6-astra.json"
+    },
+    "models": null
+}

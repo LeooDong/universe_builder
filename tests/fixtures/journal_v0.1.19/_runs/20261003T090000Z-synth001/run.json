@@ -1,0 +1,33 @@
+{
+    "run_id": "20261003T090000Z-synth001",
+    "started_utc": "2026-10-03T09:00:00Z",
+    "log_schema_version": 1,
+    "code_revision": "0000000000000000000000000000000000000021",
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.19",
+            "git_revision": "0000000000000000000000000000000000000021"
+        },
+        "pack": {
+            "name": "history",
+            "module": "universe_builder.domains.history",
+            "distribution": "universe_builder",
+            "version": "0.1.19"
+        }
+    },
+    "resolved_config_sha256": "0570156b2ae184283c91dd7a917d2992b6ae7b5e83401734c6fdd48a4d18c8b3",
+    "config": {
+        "phase": "create",
+        "atoms": [
+            "discovery"
+        ],
+        "model": "gpt-5-nano",
+        "source": "cli",
+        "limit": null,
+        "batch": false
+    },
+    "models": {
+        "create": "gpt-5-nano"
+    }
+}

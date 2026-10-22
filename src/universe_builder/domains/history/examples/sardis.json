@@ -1,0 +1,182 @@
+{
+  "name": {
+    "common": "Sardis",
+    "otherNames": [
+      "Sfard",
+      "Sparda",
+      "Sardeis",
+      "Sardes",
+      "Sart"
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Sardis",
+      "Archaeological Exploration of Sardis, Harvard University — https://sardisexpedition.org/",
+      "Britannica — Sardis, ancient city, Anatolia"
+    ],
+    "meaningOfNames": [
+      "'Sfard' is the city's own Lydian name, written in the Lydian alphabet; the Greek 'Sardeis' and Latin 'Sardes' render it, and the etymology beneath it is not established.",
+      "'Sparda' is the Old Persian form, used both for the city and for the Achaemenid satrapy governed from it; Aramaic administrative documents write it 'sprd'.",
+      "'Sart' is the modern Turkish name of the village on the site, in the Salihli district of Manisa Province."
+    ],
+    "longFormInfo": [
+      "Sardis lay at the foot of Mount Tmolus on the Pactolus stream, where it joins the Hermus (modern Gediz) valley in western Anatolia. It was the capital of the Lydian kingdom, the western terminus of the Achaemenid Royal Road that ran to Susa, and the seat of the satrapy of Sparda.",
+      "The electrum coinage minted at Sardis under the Mermnad kings is the earliest known state coinage, which is the city's principal claim on world history."
+    ]
+  },
+  "foundingDate": {
+    "year": 1200,
+    "month": null,
+    "day": null,
+    "era": "BCE",
+    "certainty": "low",
+    "sources": [
+      "Archaeological Exploration of Sardis, Harvard University — https://sardisexpedition.org/"
+    ],
+    "longFormInfo": [
+      "The site carries Late Bronze Age occupation, but no foundation event is recorded and the excavated sequence does not fix one. The date given marks the start of the continuous Iron Age settlement that became the Lydian capital; the city is not securely attested as a capital before the 7th century BCE."
+    ]
+  },
+  "dateOfDemise": {
+    "year": 1402,
+    "month": null,
+    "day": null,
+    "era": "CE",
+    "certainty": "medium",
+    "sources": [
+      "Britannica — Sardis, ancient city, Anatolia",
+      "https://en.wikipedia.org/wiki/Sardis"
+    ],
+    "longFormInfo": [
+      "Sardis was sacked by Timur in 1402 CE and did not recover as a city; the site thereafter supported only the village of Sart. Earlier disasters did not end it — the Ionians burned the lower city in 498 BCE and an earthquake destroyed it in 17 CE, and it was rebuilt both times."
+    ]
+  },
+  "location": {
+    "landmark": "Ruins of Sardis and the Temple of Artemis",
+    "city": "Sart",
+    "state": "Manisa Province",
+    "country": "Turkey",
+    "latitude": 38.4886,
+    "longitude": 28.0403,
+    "certainty": "high",
+    "sources": [
+      "Archaeological Exploration of Sardis, Harvard University — https://sardisexpedition.org/",
+      "https://en.wikipedia.org/wiki/Sardis"
+    ]
+  },
+  "cityPeriodsOfHistory": [
+    "Late Bronze Age settlement",
+    "Lydian Kingdom under the Mermnad dynasty",
+    "Achaemenid satrapy of Sparda",
+    "Seleucid rule",
+    "Attalid rule",
+    "Roman province of Asia",
+    "Byzantine era",
+    "Seljuk and Turkish beylik rule",
+    "Ottoman era"
+  ],
+  "geographyAndClimate": {
+    "elevationMetres": 120.0,
+    "january": {
+      "monthlyAverageTempCelsius": 5.5,
+      "monthlyAveragePrecipMillimetres": 95.0,
+      "monthlyAverageHumidityPercent": 75.0
+    },
+    "february": {
+      "monthlyAverageTempCelsius": 6.8,
+      "monthlyAveragePrecipMillimetres": 78.0,
+      "monthlyAverageHumidityPercent": 72.0
+    },
+    "march": {
+      "monthlyAverageTempCelsius": 10.0,
+      "monthlyAveragePrecipMillimetres": 65.0,
+      "monthlyAverageHumidityPercent": 67.0
+    },
+    "april": {
+      "monthlyAverageTempCelsius": 14.5,
+      "monthlyAveragePrecipMillimetres": 50.0,
+      "monthlyAverageHumidityPercent": 62.0
+    },
+    "may": {
+      "monthlyAverageTempCelsius": 19.8,
+      "monthlyAveragePrecipMillimetres": 35.0,
+      "monthlyAverageHumidityPercent": 57.0
+    },
+    "june": {
+      "monthlyAverageTempCelsius": 25.0,
+      "monthlyAveragePrecipMillimetres": 16.0,
+      "monthlyAverageHumidityPercent": 47.0
+    },
+    "july": {
+      "monthlyAverageTempCelsius": 28.3,
+      "monthlyAveragePrecipMillimetres": 7.0,
+      "monthlyAverageHumidityPercent": 41.0
+    },
+    "august": {
+      "monthlyAverageTempCelsius": 27.8,
+      "monthlyAveragePrecipMillimetres": 6.0,
+      "monthlyAverageHumidityPercent": 43.0
+    },
+    "september": {
+      "monthlyAverageTempCelsius": 23.2,
+      "monthlyAveragePrecipMillimetres": 17.0,
+      "monthlyAverageHumidityPercent": 48.0
+    },
+    "october": {
+      "monthlyAverageTempCelsius": 17.2,
+      "monthlyAveragePrecipMillimetres": 45.0,
+      "monthlyAverageHumidityPercent": 60.0
+    },
+    "november": {
+      "monthlyAverageTempCelsius": 11.2,
+      "monthlyAveragePrecipMillimetres": 80.0,
+      "monthlyAverageHumidityPercent": 71.0
+    },
+    "december": {
+      "monthlyAverageTempCelsius": 7.0,
+      "monthlyAveragePrecipMillimetres": 105.0,
+      "monthlyAverageHumidityPercent": 77.0
+    }
+  },
+  "judgments": {
+    "politicalInfluenceInfo": "Capital of the Lydian kingdom, then the seat of the Achaemenid satrapy of Sparda and the western end of the Royal Road, and later a conventus centre of the Roman province of Asia. Its importance was administrative rather than imperial: it was governed from elsewhere for most of its history.",
+    "politicalInfluenceScore": 8,
+    "culturalContributionInfo": "A meeting point of Lydian, Greek, Persian and later Jewish and Christian communities; the Sardis synagogue is among the largest known from the ancient world, and the city is one of the seven churches addressed in Revelation.",
+    "culturalContributionScore": 7,
+    "scientificAdvancementInfo": "The refining of electrum into separate gold and silver at the Pactolus workshops is the earliest known industrial-scale cupellation, but Sardis produced no recorded tradition of natural philosophy of its own.",
+    "scientificAdvancementScore": 5,
+    "ethicalLegacyInfo": "Remembered in the Greek tradition chiefly through Herodotus's account of Croesus, which is a moral tale about the limits of wealth and of confidence in oracles rather than a record of Lydian ethical thought.",
+    "ethicalLegacyScore": 3,
+    "economicImpactInfo": "The first state-issued coinage was struck here in electrum from the Pactolus, and the monetary system it started spread through the Greek world and beyond. The city's wealth was proverbial in antiquity.",
+    "economicImpactScore": 10,
+    "militaryImpactInfo": "A fortified acropolis repeatedly taken rather than held: by Cyrus in 546 BCE, burned by the Ionians and Athenians in 498 BCE, taken by Alexander without a fight in 334 BCE, and sacked by Timur in 1402 CE.",
+    "militaryImpactScore": 6,
+    "surpriseOfImpactInfo": "A regional Anatolian capital whose local solution to a local problem — standardising lumps of river electrum — became the basis of monetary exchange across Eurasia.",
+    "surpriseOfImpactScore": 9,
+    "sources": [
+      "Archaeological Exploration of Sardis, Harvard University — https://sardisexpedition.org/",
+      "Britannica — Sardis, ancient city, Anatolia",
+      "Herodotus, Histories I"
+    ]
+  },
+  "architecturalHighlights": [
+    "Temple of Artemis at Sardis",
+    "The acropolis and its Lydian terrace walls",
+    "The Pactolus gold-refining workshops",
+    "Bath-gymnasium complex with the Marble Court",
+    "Sardis Synagogue",
+    "Lydian chamber tombs at Bin Tepe, including the tumulus of Alyattes"
+  ],
+  "notableFigures": [
+    "Gyges",
+    "Alyattes",
+    "Croesus",
+    "Cyrus the Great",
+    "Artaphernes",
+    "Tissaphernes",
+    "Antiochus III"
+  ],
+  "popCulturalReferences": [
+    "The phrase 'rich as Croesus' survives in English and several other European languages, and derives from this city's last Lydian king.",
+    "Sardis appears as one of the seven churches of Asia in the Book of Revelation, which keeps the name in circulation in Christian liturgy and hymnody."
+  ]
+}

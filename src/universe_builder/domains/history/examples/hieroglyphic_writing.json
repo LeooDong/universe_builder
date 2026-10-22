@@ -1,0 +1,106 @@
+{
+  "name": {
+    "common": "Hieroglyphic writing",
+    "otherNames": [],
+    "sources": [
+      "Egyptian Hieroglyphs: A Very Short Introduction by Christopher Eyre",
+      "The Oxford History of Ancient Egypt by Ian Shaw"
+    ],
+    "meaningOfNames": [
+      "Sacred carvings"
+    ],
+    "longFormInfo": [
+      "Hieroglyphic writing is a formal writing system used by the ancient Egyptians that combined logographic and alphabetic elements."
+    ]
+  },
+  "earliestPhysicalRecord": {
+    "name": "Narmer Palette",
+    "ageOfRecord": {
+      "year": 3100,
+      "month": null,
+      "day": null,
+      "era": "BCE",
+      "certainty": "high",
+      "sources": [
+        "The Oxford History of Ancient Egypt by Ian Shaw",
+        "Egyptian Hieroglyphs: A Very Short Introduction by Christopher Eyre"
+      ],
+      "longFormInfo": [
+        "The Narmer Palette is one of the earliest examples of hieroglyphic writing, dating back to around 3100 BCE."
+      ]
+    },
+    "dateOfModernDiscovery": {
+      "year": 1898,
+      "month": null,
+      "day": null,
+      "era": "CE",
+      "certainty": "high",
+      "sources": [
+        "The Oxford History of Ancient Egypt by Ian Shaw"
+      ],
+      "longFormInfo": [
+        "The Narmer Palette was discovered in 1898 by British archaeologist James Edward Quibell."
+      ]
+    },
+    "location": {
+      "landmark": "Narmer Palette",
+      "city": "Hierakonpolis",
+      "state": null,
+      "country": "Egypt",
+      "latitude": 25.5,
+      "longitude": 32.65,
+      "certainty": "high",
+      "sources": [
+        "The Oxford History of Ancient Egypt by Ian Shaw"
+      ]
+    }
+  },
+  "earliestWrittenRecord": {
+    "name": "Cairo Stone",
+    "ageOfRecord": {
+      "year": 3000,
+      "month": null,
+      "day": null,
+      "era": "BCE",
+      "certainty": "medium",
+      "sources": [
+        "Egyptian Hieroglyphs: A Very Short Introduction by Christopher Eyre"
+      ],
+      "longFormInfo": [
+        "The Cairo Stone is an inscription that dates back to around 3000 BCE, showcasing early hieroglyphic writing."
+      ]
+    },
+    "dateOfModernDiscovery": {
+      "year": 1820,
+      "month": null,
+      "day": null,
+      "era": "CE",
+      "certainty": "high",
+      "sources": [
+        "The Oxford History of Ancient Egypt by Ian Shaw"
+      ],
+      "longFormInfo": [
+        "The Cairo Stone was discovered in 1820 by French archaeologist Jean-François Champollion."
+      ]
+    },
+    "location": {
+      "landmark": "Cairo Museum",
+      "city": "Cairo",
+      "state": null,
+      "country": "Egypt",
+      "latitude": 30.0444,
+      "longitude": 31.2357,
+      "certainty": "high",
+      "sources": [
+        "The Oxford History of Ancient Egypt by Ian Shaw"
+      ]
+    }
+  },
+  "discoverorOrInventor": "Ancient Egyptians",
+  "typeOfDiscovery": "cultural",
+  "controversies": null,
+  "challenges": "The complexity of the writing system and the loss of knowledge over time.",
+  "significance": "Hieroglyphic writing was crucial for the administration, culture, and religious practices of ancient Egypt.",
+  "shortSummary": "Hieroglyphic writing is an ancient Egyptian writing system that combines logographic and alphabetic elements.",
+  "longSummary": "Hieroglyphic writing, developed around 3100 BCE, is a complex system that was used for religious texts, monumental inscriptions, and administrative documents. It played a vital role in the culture and governance of ancient Egypt, allowing for the recording of history, rituals, and laws."
+}

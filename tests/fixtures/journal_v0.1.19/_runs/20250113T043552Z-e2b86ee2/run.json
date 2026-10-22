@@ -1,0 +1,25 @@
+{
+    "run_id": "20250113T043552Z-e2b86ee2",
+    "started_utc": "2025-01-13T04:35:52.878070Z",
+    "log_schema_version": 1,
+    "code_revision": "0000000000000000000000000000000000000014",
+    "resolved_config_sha256": "5e29b5532aff20d3a79fe3f9b0793b5e86445d174aee714af7fa0b49ade68de8",
+    "config": {
+        "phase": "create",
+        "atoms": [
+            "artifact",
+            "city",
+            "discovery",
+            "event",
+            "history",
+            "person"
+        ],
+        "model": "gpt-5-nano",
+        "source": "phases.<phase> -> tiers.openai.economy",
+        "limit": null,
+        "batch": false
+    },
+    "models": {
+        "create": "gpt-5-nano"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "run_id": "20250119T032928Z-a5e955e6",
+    "started_utc": "2025-01-19T03:29:28.838428Z",
+    "log_schema_version": 1,
+    "code_revision": null,
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.14",
+            "git_revision": null
+        },
+        "pack": {
+            "name": "history",
+            "module": "pack",
+            "distribution": "pack",
+            "version": "0.2.0"
+        }
+    },
+    "resolved_config_sha256": "c49d73fd1ecd0e49697a7fc26926642137662c569787a22ebfb24d847c53b91e",
+    "config": {
+        "phase": "index",
+        "atoms": [
+            "artifact",
+            "city",
+            "discovery",
+            "event",
+            "history",
+            "person"
+        ],
+        "model": "gpt-6-astra",
+        "source": "phases.<phase> -> tiers.openai.frontier",
+        "limit": null,
+        "batch": false
+    },
+    "models": {
+        "index": "gpt-6-astra"
+    }
+}

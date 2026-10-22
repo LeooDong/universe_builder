@@ -1,0 +1,77 @@
+{
+    "name": {
+        "common": "Pantheon of Rome",
+        "otherNames": [
+            "Pantheon",
+            "Santa Maria ad Martyres"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+            "UNESCO World Heritage Centre — Historic Centre of Rome"
+        ],
+        "meaningOfNames": [
+            "From Greek 'pantheion', a temple of all the gods.",
+            "Consecrated as a church in 609 and dedicated to St Mary and the Martyrs."
+        ],
+        "longFormInfo": [
+            "A Roman temple with the largest unreinforced concrete dome ever built, in continuous use as a church since the seventh century."
+        ]
+    },
+    "location": {
+        "landmark": "Piazza della Rotonda",
+        "city": "Rome",
+        "state": "Lazio",
+        "country": "Italy",
+        "latitude": 41.8986,
+        "longitude": 12.4769,
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Pantheon,_Rome"
+        ]
+    },
+    "dateBuilt": {
+        "year": 114,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "medium",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Pantheon,_Rome"
+        ],
+        "longFormInfo": [
+            "Agrippa's temple of 27–25 BCE burned in 80 CE; Domitian's rebuilding burned in 110. Brick stamps suggest the present building was begun late in Trajan's reign, around 114."
+        ]
+    },
+    "dateCompleted": {
+        "year": 125,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "medium",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Pantheon,_Rome"
+        ],
+        "longFormInfo": [
+            "Completed under Hadrian and dedicated about 125–126; the portico inscription still credits Marcus Agrippa, whose earlier temple stood on the site."
+        ]
+    },
+    "patrons": [
+        "Trajan",
+        "Hadrian"
+    ],
+    "commissioningPolity": "Roman Empire",
+    "rediscovery": null,
+    "architects": [],
+    "purpose": "Built as a temple to the gods of Rome; given to the Church by the Byzantine emperor Phocas and consecrated by Pope Boniface IV in 609, it has been a church ever since and also holds the tombs of Raphael and of kings of Italy.",
+    "architecturalStyle": "Roman: a pedimented portico before a concrete rotunda with an open oculus",
+    "currentState": "altered",
+    "heritageStatus": "UNESCO World Heritage Site (1980, as part of the Historic Centre of Rome)",
+    "significance": "The best-preserved major building of ancient Rome, whose unreinforced concrete dome, 43.3 metres across, is still the largest of its kind.",
+    "shortSummary": "A Roman temple begun under Trajan around 114 and completed under Hadrian about 125 CE, famous for its concrete dome and oculus, and a church since 609.",
+    "longSummary": [
+        "Marcus Agrippa built the first Pantheon in 27–25 BCE; it burned in 80 CE, and Domitian's rebuilding burned in 110. The present building was begun under Trajan and completed under Hadrian, who kept Agrippa's name on the portico.",
+        "Its dome is a hemisphere of graded concrete whose diameter equals the height of the interior, lit only by an oculus about eight to nine metres across.",
+        "Its conversion to a church in 609 preserved it almost intact, though Constans II stripped its bronze roof tiles in 663 and Urban VIII melted down the bronze of the portico in the seventeenth century.",
+        "Raphael was buried there in 1520, and later the first kings of Italy; it became a model for domed buildings from the Renaissance onwards."
+    ]
+}

@@ -1,0 +1,129 @@
+{
+    "name": {
+        "common": "Genghis Khan",
+        "otherNames": ["Temüjin", "Chinggis Khaan", "Činggis Qan", "Chinggis Khagan"],
+        "sources": ["https://en.wikipedia.org/wiki/Genghis_Khan"],
+        "meaningOfNames": [
+            "'Temüjin' was his birth name",
+            "'Chinggis Khaan' is the Mongolian form; 'Genghis Khan' is the anglicised spelling of the same name, not a separate title.",
+            "'Genghis' is believed to have originated from the Turkic word 'tengiz,' meaning 'ocean' or 'wide-spreading,' possibly referring to the vastness of Genghis Khan's conquests.",
+            "'Khan' is a title used in many Central Asian cultures for a ruler or leader, similar to 'king' or 'emperor'."
+        ],
+        "longFormInfo": []
+    },
+    "birth": {
+        "date": {
+            "year": 1162,
+            "month": null,
+            "day": null,
+            "era": "CE",
+            "certainty": "low",
+            "sources": ["https://en.wikipedia.org/wiki/Genghis_Khan#cite_note-FOOTNOTEMan200470Biran201233Atwood200497May201822Jackson201763-22"],
+            "longFormInfo": [
+                "The year of Temüjin's birth is disputed, as historians favour different dates: 1155, 1162 or 1167.",
+                "1162 remains the most accepted date; the historian Paul Ratchnevsky notes that Temüjin himself may not have known the truth."
+            ]
+        },
+        "location": {
+            "landmark": "",
+            "city":"Dadal",
+            "state":"Khentii Province",
+            "country":"Mongolia",
+            "latitude":49.0124,
+            "longitude":111.509,
+            "certainty": "low",
+            "sources": ["https://en.wikipedia.org/wiki/Genghis_Khan#cite_note-FOOTNOTEAtwood200497-24"]
+        }
+    },
+    "death": {
+        "date": {
+            "year": 1227,
+            "month": 8,
+            "day": null,
+            "era": "CE",
+            "certainty": "high",
+            "sources": ["https://en.wikipedia.org/wiki/Genghis_Khan"],
+            "longFormInfo": [
+                "Sources suggest he died on 18 August 1227, but his death was kept a closely guarded secret and Zhongxing, unaware, fell the following month.",
+                "Other sources say he died in the 25th of August 1227.",
+                "The exact nature of the khan's death has been the subject of intense speculation. Rashid al-Din and the History of Yuan mention he suffered from an illness—possibly malaria, typhus, or bubonic plague. Marco Polo claimed that he was shot by an arrow during a siege, while Carpini reported that Genghis was struck by lightning. Legends sprang up around the event—the most famous recounts how the beautiful Gurbelchin, formerly the Xia emperor's wife, injured Genghis's genitals with a dagger during sex."
+            ]
+        },
+        "location": {
+            "landmark": "",
+            "city":"Xingqing",
+            "state":"Western Xia",
+            "country":"China",
+            "latitude":38.438957,
+            "longitude":105.992387,
+            "certainty": "medium",
+            "sources": ["https://en.wikipedia.org/wiki/Genghis_Khan", "https://en.wikipedia.org/wiki/Xingqing_Prefecture"]
+        },
+        "reason": {
+            "causeOfDeath": "It is not certain what Genghis Khan's cause of death was. One accepted theory was from falling off a horse during the military campaign against the Western Xia dynasty. Other theories suggest wounds from battle or nondescript illnesses.",
+            "diseases": [
+                "Potentially Malaria",
+                "Potentially Bubonic Plague"
+            ]
+        }
+    },
+    "judgments": {
+        "politicalInfluenceInfo": "Genghis Khan established one of the largest empires in history, the Mongol Empire, which significantly altered the political landscape of Asia and Europe.",
+        "politicalInfluenceScore": 10,
+        "culturalContributionInfo": "While not primarily known for cultural contributions, the Pax Mongolica (Mongol Peace) he established allowed for increased cultural exchanges between East and West",
+        "culturalContributionScore": 3,
+        "scientificAdvancementInfo": "The Mongol Empire did not produce significant scientific or technological advancements directly attributable to Genghis Khan",
+        "scientificAdvancementScore": 0,
+        "ethicalLegacyInfo": "He is remembered for his brutal military campaigns and mass killings, but also implementing meritocratic primciples and religious tolerance",
+        "ethicalLegacyScore": 2,
+        "economicImpactInfo": "His conquests and the stability he brought to the Silk Road dramatically increased trade between Asia and Europe",
+        "economicImpactScore": 8,
+        "militaryImpactInfo": "He revolutionized warfare with innovative approaches, such as the use of highly mobile cavalry and psychological warfare",
+        "militaryImpactScore": 10,
+        "surpriseOfImpactInfo": "Considering that he started from a relatively obscure and disadvantaged position, from a tribe in a harsh natural environment, it is extremely surprising he had the impact he did.",
+        "surpriseOfImpactScore": 9,
+        "sources": ["Manual Check"]
+    },
+    "family": {
+        "parents":["Yesügei", "Hoelun"],
+        "children":["Jochi", "Chagatai", "Ögedei", "Tolui", "Kua Ujin", "Alakhai Bekhi", "Altalun", "Checheyigen", "Tumelun", "Kharachar", "Yesungge"],
+        "spouses":["Börte", "Yesugen", "Kulan", "Yesui", "Ibaqa Beki", "Gunju Khatun", "Möge Khatun", "Juerbiesu"],
+        "otherRelatives":["Khasar", "Temüge", "Belgutei", "Behter", "Jamukha", "Töregene Khatun", "Sorghaghtani Beki", "Kublai Khan", "Hulagu Khan", "Batu Khan"],
+        "familyBackground": [
+            "Genghis Khan was born into the Borjigin clan of the Mongol people in the early 12th century.",
+            "His father, Yesügei, was a tribal chief, and his mother, Hoelun, played a crucial role in shaping his early upbringing.",
+            "Genghis Khan grew up in a nomadic pastoralist society, learning essential skills such as horseback riding, archery, and warfare from a young age.",
+            "He was one of several children in his family"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Genghis_Khan",
+            "The Secret History of the Mongols, trans. Igor de Rachewiltz (Brill, 2004)"
+        ]
+    },
+    "occupationOrRole": "Military Leader and Statesman",
+    "shortSummary": "Conquered a vast portion of Asia and Europe, unifying various Mongol tribes into one empire.",
+    "longSummary": [
+        "Genghis Khan was the founder of the Mongol Empire, which at its peak controlled a large portion of the known world.",
+        "He is considered one of the most successful conquerors in history, and his legacy continues to influence modern politics and culture."
+    ],
+    "curiousFact": [
+        "Estimates vary, but some genetic studies suggest that as much as 0.5% to 1% of the male population in Eurasia, including Europe, may be descended from Genghis Khan."],
+    "familyMembers": ["Ogodei Khan", "Tolui Khan", "Jochi Khan", "Chagatai Khan", "Möngke Khan", "Kublai Khan", "Hulagu Khan", "Bat Khan"],
+    "achievements": [
+        "Creation of the Mongol Empire, which became the largest contiguous land empire in history.",
+        "The empire facilitated trade along the Silk Road, fostering cultural exchange and technological advancements between East and West."
+    ],
+    "legacy": [
+        "He is remembered as a military genius, whose conquests transformed the geopolitical landscape of Eurasia.",
+        "Beyond his martial achievements, Genghis Khan's administrative reforms laid the foundation for the governance of the Mongol Empire and influenced subsequent dynasties.",
+        "His empire facilitated cultural exchange, technological innovation, and the diffusion of ideas across continents.",
+        "Despite the controversy surrounding his methods and the devastation wrought by his conquests, Genghis Khan's legacy endures as a symbol of Mongolian identity, resilience, and historical significance."
+    ],
+    "referencesInPopCulture": [
+        "'Marco Polo' (2014-2016): This Netflix series features Kublai Khan, Genghis Khan's grandson, and includes references to Genghis Khan's legacy and impact.",
+        "'Bill & Ted's Excellent Adventure' (1989): Genghis Khan, portrayed by Al Leong, is one of the historical figures brought to the present by the main characters.",
+        "'Iron Maiden': The heavy metal band Iron Maiden has a song titled 'Genghis Khan' on their 1981 album 'Killers'.",
+        "'Sid Meier's Civilization' Series: Genghis Khan is a playable leader in several iterations of this popular strategy game series.",
+        "'Age of Empires II': The game includes a campaign centered around Genghis Khan, allowing players to relive his conquests."
+    ]
+}

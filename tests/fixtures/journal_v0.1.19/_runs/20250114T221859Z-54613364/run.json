@@ -1,0 +1,20 @@
+{
+    "run_id": "20250114T221859Z-54613364",
+    "started_utc": "2025-01-14T22:18:59.244606Z",
+    "log_schema_version": 1,
+    "code_revision": "000000000000000000000000000000000000001a",
+    "resolved_config_sha256": "5adb129a47494a287dcc15624b8ceac04848dbf14543ab555c04075cab6b421f",
+    "config": {
+        "phase": "expand",
+        "atoms": [
+            "city"
+        ],
+        "model": "gpt-5.6-luna",
+        "source": "phases.<phase> -> tiers.openai.balanced",
+        "limit": null,
+        "batch": false
+    },
+    "models": {
+        "expand": "gpt-5.6-luna"
+    }
+}

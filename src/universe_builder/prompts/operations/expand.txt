@@ -1,0 +1,2 @@
+Expand the named sub-item of the JSON below into a full object matching the
+schema. Return only the object for that sub-item, not the surrounding document.

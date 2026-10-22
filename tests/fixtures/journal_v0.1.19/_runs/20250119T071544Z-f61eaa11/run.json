@@ -1,0 +1,41 @@
+{
+    "run_id": "20250119T071544Z-f61eaa11",
+    "started_utc": "2025-01-19T07:15:44.045352Z",
+    "log_schema_version": 1,
+    "code_revision": null,
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.14",
+            "git_revision": null
+        },
+        "pack": {
+            "name": "history",
+            "module": "pack",
+            "distribution": "pack",
+            "version": "0.2.0"
+        }
+    },
+    "resolved_config_sha256": "4c58035148c5120a13590c9caff3d9296a2d9afc687a2d535703c19023870d9d",
+    "config": {
+        "command": "index-append",
+        "files": [
+            "history_h0000000000000101_subject_1_gpt-6-astra.json",
+            "history_h0000000000000150_subject_38_gpt-6-astra.json",
+            "history_h0000000000000154_subject_40_gpt-6-astra.json",
+            "history_h0000000000000152_subject_39_gpt-6-astra.json",
+            "history_h0000000000000156_subject_41_gpt-6-astra.json",
+            "history_h000000000000010c_subject_6_gpt-6-astra.json",
+            "history_h000000000000014b_subject_36_gpt-6-astra.json"
+        ],
+        "lists": [
+            "polities",
+            "monuments",
+            "works",
+            "figures"
+        ],
+        "model": "gpt-6-astra",
+        "force": false
+    },
+    "models": null
+}

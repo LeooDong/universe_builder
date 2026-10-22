@@ -1,0 +1,14 @@
+{
+ "openai:Discovery": "970a7c4217bf8118ce95aaf7659f4fb536346b4e26a53a2fc166ff9c5da11b81",
+ "anthropic:Discovery": "970a7c4217bf8118ce95aaf7659f4fb536346b4e26a53a2fc166ff9c5da11b81",
+ "google:Discovery": "970a7c4217bf8118ce95aaf7659f4fb536346b4e26a53a2fc166ff9c5da11b81",
+ "openai:City": "f28660d0dbb3df9f8c3188a43a7aa0716530b0f04133c1edf983be8262c6b5f4",
+ "anthropic:City": "f28660d0dbb3df9f8c3188a43a7aa0716530b0f04133c1edf983be8262c6b5f4",
+ "google:City": "f28660d0dbb3df9f8c3188a43a7aa0716530b0f04133c1edf983be8262c6b5f4",
+ "openai:CityExpanded": "bd7eaab4834dbbf955b5532979000e54ee03eefe69d096c9e964c3872412e589",
+ "anthropic:CityExpanded": "bd7eaab4834dbbf955b5532979000e54ee03eefe69d096c9e964c3872412e589",
+ "google:CityExpanded": "bd7eaab4834dbbf955b5532979000e54ee03eefe69d096c9e964c3872412e589",
+ "openai:Population": "ffb851ec650e3970b0ac966a81264fb9cc9ae873a04bdda6d61fd19c3ff7f593",
+ "anthropic:Population": "ffb851ec650e3970b0ac966a81264fb9cc9ae873a04bdda6d61fd19c3ff7f593",
+ "google:Population": "ffb851ec650e3970b0ac966a81264fb9cc9ae873a04bdda6d61fd19c3ff7f593"
+}

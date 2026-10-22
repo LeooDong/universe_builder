@@ -1,0 +1,14 @@
+{
+    "indicationName": "Headache",
+    "typicalDoseDescription": "300-900 mg orally every 4-6 hours as required, to a maximum of 4 g in 24 hours for adults.",
+    "effectiveness": "high",
+    "contraindications": [
+        "Active peptic ulceration",
+        "Children under 16 (risk of Reye's syndrome)",
+        "Known aspirin or NSAID hypersensitivity"
+    ],
+    "evidenceSources": [
+        "British National Formulary",
+        "Cochrane review of aspirin for acute headache"
+    ]
+}

@@ -1,0 +1,24 @@
+# A not-duplicates file in v0.1.19's format, written for this fixture (not a
+# copy of any pack's table): pairs, longer claims, trailing comments, and
+# spellings that differ only in case and punctuation.
+
+Thutmose I != Thutmose IV
+Rameses II != Rameses III
+Darius I != Darius III   # different reigns, a century and a half apart
+Cyrus the Great != Cyrus the Younger
+Philip II of Macedon != Philip II of Spain
+Ptolemy I Soter != Claudius Ptolemy
+Nicaea != Nice
+nicaea != NICE   # the same claim, folded
+Thebes (Luxor) != Thebes (Boeotia)
+Antioch != Antioch in Pisidia != Antioch on the Maeander
+Heliopolis (Egypt) != Heliopolis (Baalbek)
+Memphis (Egypt) != Memphis (Tennessee)
+Philadelphia (Amman) != Philadelphia (Alaşehir) != Philadelphia (Pennsylvania) != Philadelphia in the Fayum
+Alexandria != Alexandria Eschate != Alexandria Arachosia != Alexandria on the Oxus != Alexandria Troas
+Ur != Uruk
+Sardis != Sardinia
+Book of the Dead != Tibetan Book of the Dead
+Pantheon (Rome) != Panthéon (Paris)
+Ka'ba != Kaaba of Zoroaster
+Shahnameh != Shahnameh of Shah Tahmasp

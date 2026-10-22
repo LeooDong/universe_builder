@@ -1,0 +1,80 @@
+{
+    "name": {
+        "common": "Rostam",
+        "otherNames": [
+            "Rustam",
+            "Tahamtan"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Rostam",
+            "Encyclopaedia Iranica, 'Haft Ḵᵛān'",
+            "Encyclopaedia Iranica, 'Āzādsarv'",
+            "Ferdowsi, Shahnameh"
+        ],
+        "meaningOfNames": [
+            "From Middle Persian Rōdastahm, Old Iranian *rautas-taxma: taxma is 'brave, strong', and the first element is read as 'growth' or 'river', so 'strong in growth' or 'as strong as a river'.",
+            "'Tahamtan', 'mighty-bodied', from the same root, is the Shahnameh's epithet for him; he is also called Rostam-e Dastan, son of Dastan, the other name of his father Zal."
+        ],
+        "longFormInfo": [
+            "The greatest hero of Persian epic, champion of the kings of Iran in the Shahnameh."
+        ]
+    },
+    "kind": "hero",
+    "historicity": "legendary",
+    "cultures": [
+        "Persian epic tradition",
+        "Saka tradition of Sistan"
+    ],
+    "roles": [
+        "champion of the kings of Iran",
+        "lord of Zabulistan and Sistan"
+    ],
+    "attributes": [
+        "his horse Rakhsh",
+        "the babr-e bayan, an invulnerable animal-skin coat",
+        "his grandfather Sam's mace"
+    ],
+    "parents": [
+        "Zal",
+        "Rudaba"
+    ],
+    "siblings": [
+        "Shaghad"
+    ],
+    "consorts": [
+        "Tahmineh"
+    ],
+    "children": [
+        "Sohrab",
+        "Faramarz"
+    ],
+    "identifiedWith": [],
+    "places": [],
+    "temples": [],
+    "appearsIn": [
+        "Shahnameh"
+    ],
+    "earliestAttestation": {
+        "year": 740,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "medium",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Rostam",
+            "https://idp.bl.uk/blog/two-precious-items-copied-by-a-sogdian-scribe/"
+        ],
+        "longFormInfo": [
+            "Rostam is absent from the Avesta. The earliest datable evidence is the cycle of Rostam paintings at Panjikent in Sogdiana, of the first half of the eighth century; a Sogdian text fragment of a Rostam story from Dunhuang is of about the ninth century. Both show his legend was current in eastern Iran well before Ferdowsi."
+        ]
+    },
+    "significance": "Rostam is the central hero of the Shahnameh, the model of the loyal but independent champion who serves Iran's kings while judging them.",
+    "legacy": "His Seven Labours, and his killing of his own son Sohrab without knowing him, are the most retold stories in Persian; the site of the Achaemenid royal tombs, Naqsh-e Rostam, was later named after him, its Sasanian reliefs taken to show him.",
+    "shortSummary": "The legendary hero of the Shahnameh, son of Zal, rider of Rakhsh, who defends Iran for centuries and unknowingly kills his son Sohrab.",
+    "longSummary": [
+        "Born to Zal and the Kabuli princess Rudaba, Rostam serves a line of legendary kings of Iran and completes the Seven Labours, a series of trials, to rescue Kay Kavus.",
+        "His tragedies are his combats: with Sohrab, the son he fathered with Tahmineh and does not recognise, and with Esfandiyar, the prince he is forced to kill.",
+        "He dies by betrayal: his half-brother Shaghad lures him into a pit lined with spears, and Rostam kills Shaghad with a last arrow.",
+        "The legend has roots in the Saka traditions of Sistan and was told in Sogdian and by Persian storytellers, such as Azad Sarv of Merv, whom Ferdowsi names as his source for Rostam's death, before Ferdowsi gave it its lasting form."
+    ]
+}

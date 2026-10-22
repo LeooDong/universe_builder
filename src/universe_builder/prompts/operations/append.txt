@@ -1,0 +1,5 @@
+Append supplementary information to the JSON below, following the schema.
+Return ONLY material that is not already present in the JSON you were given:
+never restate an entry it already holds, in any spelling. If you have nothing
+genuinely new to add, return the supplementary object with empty lists — that
+is the correct answer, not a failure. Return only the supplementary object.

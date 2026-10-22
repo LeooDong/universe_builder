@@ -1,0 +1,269 @@
+# Which model runs which phase, and how hard to try.
+#
+# Editing this file is the supported way to change model choices — it is why the
+# file exists.
+#
+# **Phases name a capability tier, not a model.** Model ids turn over every few
+# months, and a config full of them is a config that is always slightly wrong. A
+# phase says how hard its job is; the tier table below says which model that
+# means today, for whichever vendor is in force. Switching vendor is then one
+# line, or `--provider` on the command line.
+#
+# A phase may still name an exact model id, which passes through untouched. That
+# is the escape hatch — pinning one phase to reproduce a run, or because a
+# specific model is the only one that gets a job right, must not mean abandoning
+# tiers everywhere else.
+#
+# Precedence, highest first:
+#
+#   1. an explicit CLI argument      (--model, --provider)
+#   2. atoms.<atom>.<phase>          per-atom override
+#   3. phases.<phase>                phase default
+#   4. defaults.model                global fallback
+#
+# Every model named in `tiers` must have a row in providers/model_pricing.json;
+# tests/test_config.py enforces that, which is what stopped these drifting a
+# generation out of date before.
+
+defaults:
+  # The vendor whose tier table is in force. `openai` and `anthropic` have been
+  # exercised live; `google` is configured but not.
+  provider: openai
+  # Inert today: every phase below names a tier, so this global fallback is
+  # never consulted. Left as economy so that a *new* phase added without a tier
+  # fails cheap rather than expensive.
+  model: economy
+  # Raised after repeated truncations on both gpt-5-nano and gpt-5.6-luna, in
+  # create *and* expand. The message is always the same: a reasoning model can spend the whole budget on reasoning
+  # tokens and return empty content, and `providers/run.py` deliberately does
+  # not re-ask, since the same budget would hit the same wall. Raising the cap
+  # costs nothing unless a call actually uses it — output tokens are billed on
+  # what is emitted, not on the ceiling — so this is free headroom against a
+  # 400k context. The real fix is capping *reasoning* separately, which only
+  # the Responses transport exposes; until then, headroom.
+  max_tokens: 32768
+  # Bounded concurrency for the synchronous create AND augment passes (expand,
+  # append, fix, verify). Every call for an atom type shares a cached prefix,
+  # and a cache entry only becomes readable once the first response has started
+  # streaming — so firing a cold batch in parallel would write the cache many
+  # times and read it never. The passes therefore run the first item alone to
+  # warm the prefix, then start the pool. With warming in place, >1 is the
+  # right default: expand makes one call per historical period per city and was
+  # unusably serial at 1 (a civilisation's expand ran for hours end to end).
+  # 4 is a conservative parallelism that stays well under provider rate limits;
+  # raise it for a large expand/verify sweep. The batch path ignores this — its
+  # concurrency is the provider's, not ours.
+  concurrency: 4
+
+# Three tiers, cheapest last. Three rather than five because every extra tier is
+# a judgement someone has to make per vendor, and vendors ship roughly three
+# useful sizes. Prices are USD per 1M tokens, from model_pricing.json, as a
+# sanity check on the ordering rather than as a second source of truth.
+tiers:
+  openai:
+    frontier: gpt-6-astra      #  10.00 / 50.00
+    strong: gpt-6.1-sol        #   2.00 / 10.00
+    balanced: gpt-6-luna       #   0.10 /  0.50  (gpt-5.6-luna until v0.1.19: newer, half the price)
+    economy: gpt-5-nano        #   0.05 /  0.40
+  # Same models as `openai`; only the transport differs. `openai-search` adds
+  # the web_search tool, which needs a model that supports it — gpt-4.1-mini is
+  # the cheap one, and gpt-5-nano does NOT support search, so economy points at
+  # 4.1-mini here rather than inheriting nano.
+  openai-responses:
+    frontier: gpt-6-astra
+    strong: gpt-6.1-sol
+    balanced: gpt-6-luna
+    economy: gpt-5-nano
+  openai-search:
+    frontier: gpt-6-astra
+    strong: gpt-4.1              # the search tool; no sol-class search model yet
+    balanced: gpt-4.1
+    economy: gpt-4.1-mini
+  # The anthropic tiers are not yet measured against this pipeline. Rows for claude-opus-5-5 (4/20), claude-fable-5-1
+  # (10/50), claude-sonnet-5-5 (2/10) and claude-haiku-5-5 (0.10/0.50) are in
+  # model_pricing.json for a phase or tier to name.
+  anthropic:
+    frontier: claude-opus-5    #   5.00 / 25.00
+    strong: claude-opus-5      # nothing between opus and sonnet
+    balanced: claude-sonnet-5  #   2.00 / 10.00
+    economy: claude-haiku-4-5-20251001   # 1.00 / 5.00
+  google:
+    frontier: gemini-3.1-pro-preview     # 2.00 / 12.00
+    strong: gemini-3.1-pro-preview
+    balanced: gemini-3.5-flash           # 1.50 /  9.00
+    economy: gemini-2.5-flash-lite       # 0.10 /  0.40
+  deepseek:
+    frontier: deepseek-reasoner  # 0.66 / 1.98
+    strong: deepseek-reasoner
+    balanced: deepseek-reasoner
+    economy: deepseek-chat       # 0.22 / 0.66
+  qwen:
+    frontier: qwen3.8-max        # 2.00 / 6.00
+    strong: qwen3.8-max
+    balanced: qwen3.8-flash      # 0.14 / 0.42
+    economy: qwen3.5-flash       # 0.10 / 0.40
+
+phases:
+  # One call per civilisation, and it decides the several hundred atoms every
+  # other phase then generates. The highest-leverage call in the system and the
+  # lowest volume: worth the frontier tier, which costs little at one call per
+  # civilisation.
+  # Once called `history` (a `history:` key is still read as this).
+  index: frontier
+
+  # The bulk — several hundred calls per civilisation, and **not** economy,
+  # despite that being what "the bulk" usually argues for.
+  #
+  # Compared head-to-head: identical subjects through each model, same
+  # prompt, same code, several atom types, on fill, coordinates, cost per atom
+  # and output tokens per call.
+  #
+  # **The economy tier is more expensive here.** Reasoning tokens dominate the
+  # bill, and nano spends several times as many of them to reach a less
+  # complete atom, so its lower list price on output comes out dearer in
+  # practice. Latitude and longitude are the clearest casualty — nano often
+  # omits them, while luna supplies them. Where nano does answer it agrees
+  # with luna closely, so this is abstention rather than error.
+  #
+  # This replaced per-atom `create` pins on `person` and `city`, which said the
+  # same thing one atom type at a time. Note the finding is about *these*
+  # models: it is a claim about gpt-5-nano's reasoning-token appetite, not a
+  # general law that the dearer tier is cheaper. Re-measure when the tier table
+  # moves.
+  create: balanced
+
+  # Repairing a payload that already failed once is a harder job than producing
+  # it, and the volume is whatever failed, so a step up is cheap in absolute
+  # terms.
+  fix: balanced
+
+  # The one phase where economy really is the economy. Verifying the same
+  # person atoms with each model, luna emits fewer tokens but pays more for
+  # each, so it lands somewhat more expensive — the inverse of every other
+  # phase, because verify's output is a rewrite of an existing atom rather
+  # than an atom built from nothing.
+  #
+  # The fill deltas are the more useful finding: **verify does not fill gaps.**
+  # Neither model moved completeness measurably. It is an accuracy pass, and
+  # the tool for a missing coordinate is regeneration on a better model, not
+  # this.
+  #
+  # Set to balanced anyway, by decision, against that premium. The finding is
+  # kept here rather than deleted, because it is the one row in this file that
+  # argues the other way and a future reader should see it.
+  #
+  # Three reasons it is the weakest row here. It was measured on `person` only,
+  # and person is the single atom type that was *always* on balanced — its
+  # atoms were already the most complete in the corpus, so luna had the least
+  # room to show a gain; a thin atom type could read differently. A small
+  # premium on a phase that has barely run is nothing in absolute terms. And
+  # one model for every generating phase means one model
+  # string across the corpus, which is worth something on its own: `merge_helper`
+  # pairs legacy-named files by that string, and every divergence so far has
+  # cost more in hazard than it saved in tokens.
+  #
+  # Re-measure on a sparse atom type before trusting either direction.
+  verify: balanced
+
+  # Compared on the same city periods with each model: luna was cheaper per
+  # period and at least as complete on every period field.
+  #
+  # Held back on a guess a few hours earlier — that an expand response, being
+  # one small Population object rather than a whole atom, would not show the
+  # reasoning-token gap that makes luna cheap elsewhere. The guess was wrong:
+  # nano spends several times luna's output tokens on a single period.
+  # Measure the phase; do not reason about it from the shape of its response.
+  expand: balanced
+
+  # Kept equal to `create`, and moved to balanced with it.
+  #
+  # It was once unpinned on the grounds that merge pairs a city with
+  # its append on the content id, so the model string no longer matters — true
+  # for a migrated corpus, where no file carries a legacy sequential id. But `test_operations.py::test_append_then_merge_works_with
+  # _the_real_phase_models` deliberately builds a *legacy-named* city, where
+  # there is no content id to pair on and merge still matches on the model
+  # string. That test caught the divergence the moment `create` moved, which is
+  # what it is for: a corpus that has not run `universe_builder migrate` would get silent
+  # no-op merges.
+  #
+  # Since appends are small and rare, matching
+  # `create` costs nothing measurable and removes the hazard outright. If the
+  # two ever need to diverge, migrate first and delete that test knowingly.
+  append: balanced
+
+# Per-atom overrides. A phase tier applies to every atom type unless an atom
+# says otherwise, and an atom may name a tier or an exact model.
+# Empty on purpose. Both pins that lived here — `create` on person and city,
+# and `expand` on city — came out once the phase defaults said
+# the same thing for every atom type. A per-atom override should record a
+# genuine difference between atoms, not restate the phase it sits under.
+atoms: {}
+
+# Reasoning effort (v0.6.0, providers/effort.py): how hard a model is asked to
+# think, one provider-neutral level that each provider translates (OpenAI's
+# `reasoning_effort`, Anthropic's `output_config.effort`). Levels: low, medium,
+# high; xhigh and max only where the provider has them (Claude takes all five,
+# OpenAI has no max). Google, DeepSeek, Qwen and OpenRouter ignore it, with a
+# warning.
+#
+# **Unset sends nothing**, which is what every run did before v0.6.0: OpenAI's
+# reasoning models then run at the API's default effort, Claude at the model's
+# own (high on Haiku 5.5 and Sonnet 5.5, medium on Opus 5.5). Comparing two
+# vendors fairly means setting it.
+#
+# Precedence, highest first, as for models: --effort on the command line, then
+# atoms.<atom>.<phase>, then phases.<phase>, then default. Every value is
+# validated on load.
+effort:
+  default:          # e.g. medium
+  phases: {}        # e.g. {create: low, index: high}
+  atoms: {}         # e.g. {person: {create: medium}}
+
+# Task budget (v0.6.1, providers/task_budget.py): an advisory output budget in
+# tokens. Anthropic's task budget (beta task-budgets-2026-03-13) shows the
+# model a countdown and it paces itself to finish inside it; max_tokens stays
+# the hard cap. Only Claude models whose model_pricing.json row says
+# "task_budget": true (Opus 5, Opus 5.5, Fable 5.1, Sonnet 5, Opus 4.8); a
+# budget sent to another Claude model is refused before the run, and every
+# other provider ignores it with a warning.
+#
+# At least 20,000. Size it by measuring the task, and keep it under
+# defaults.max_tokens with headroom (one half to two thirds of it): every call
+# here is a single response, so a budget over max_tokens is refused.
+#
+# **Unset sends nothing**: the request is what it was before v0.6.1.
+# Precedence as for effort: --task-budget, then atoms.<atom>.<phase>, then
+# phases.<phase>, then default. Every value is validated on load.
+task_budget:
+  default:          # e.g. 20000
+  phases: {}        # e.g. {index: 24000}
+  atoms: {}         # e.g. {person: {create: 20000}}
+
+retry:
+  # Applied by providers/run.complete — the entry points install this block as
+  # the run policy (`providers.run.configure`), and it is the *only* retry
+  # loop: the SDKs' own retries are disabled on the synchronous call, so these
+  # numbers mean what they say. A truncated response is deliberately not
+  # retried: re-asking with the same budget hits the same limit and spends the
+  # tokens twice.
+  transport_attempts: 3
+  validation_attempts: 2
+  backoff_seconds: 1
+  backoff_max_seconds: 30
+  # Client-side ceiling per attempt, in seconds, handed to the SDK per request.
+  # Without it the SDK default applies (600s for OpenAI), which with the retries
+  # above meant roughly half an hour before a dead call surfaced. On a streamed
+  # call this bounds the wait BETWEEN chunks, not the generation: a
+  # multi-minute frontier response streams tokens continuously and is unaffected, while an
+  # idle socket fails in two minutes instead of ten.
+  timeout_seconds: 120
+
+experiments:
+  # Prompt experiments (v0.5.0, `universe_builder experiment`): a generating
+  # arm runs only on a model whose output price is at most this, in USD per
+  # 1M tokens, checked per atom type on price rather than tier name ("balanced"
+  # is gpt-6-luna at $0.50 under openai but claude-sonnet-5 at $15 under
+  # anthropic). An experiment varies the prompt on cheap models; a frontier
+  # call is where an experiment would cost real money. The judge is chosen per
+  # command and is not bound by this.
+  max_output_price: 1.0

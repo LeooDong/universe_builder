@@ -1,0 +1,89 @@
+{
+    "name": {
+        "common": "Construction of the Great Pyramid of Giza",
+        "otherNames": ["Building of the Pyramid of Khufu"],
+        "sources": ["GPT"],
+        "meaningOfNames": ["Possibly named due to the shape resembling a cake of roasted wheat-grains preserved in honey, and in this sense is said to derive from pyros 'wheat' on the model of sesamis."],
+        "longFormInfo": ["The construction of the Great Pyramid of Giza refers to the building of the largest of the three main pyramids located on the Giza Plateau near Cairo, Egypt."]
+    },
+    "eventStart": {
+        "date": {
+            "year": 2580,
+            "month": null,
+            "day": null,
+            "era": "BCE",
+            "certainty": "medium",
+            "sources": ["GPT"],
+            "longFormInfo": ["The construction of the Great Pyramid of Giza is believed to have started around 2580 BCE during the Fourth Dynasty of the Old Kingdom of Egypt."]
+        },
+        "location": {
+            "landmark": "Great Pyramid of Giza",
+            "city": "Giza",
+            "state": "Cairo",
+            "country": "Egypt",
+            "latitude": 29.9792,
+            "longitude": 31.1342,
+            "certainty": "high",
+            "description": "On the Giza plateau, located on the west bank of the Nile River. This site was close to the ancient Egyptian capital of Memphis",
+            "sources": ["GPT"]
+        }
+    },
+    "eventEnd": {
+        "date": {
+            "year": 2560,
+            "month": null,
+            "day": null,
+            "era": "BCE",
+            "certainty": "medium",
+            "sources": ["GPT"],
+            "longFormInfo": ["The construction of the Great Pyramid of Giza is estimated to have been completed around 2560 BCE."]
+        },
+        "location": {
+            "landmark": "Great Pyramid of Giza",
+            "city": "Giza",
+            "state": "Cairo",
+            "country": "Egypt",
+            "latitude": 29.9792,
+            "longitude": 31.1342,
+            "certainty": "high",
+            "description": "Contruction finished at the same location.",
+            "sources": ["GPT"]
+        }
+    },
+    "keyActorsOrParticipants": [
+        "Khufu (Cheops)",
+        "Names of individual architects and workers are not well-documented"
+    ],
+    "causes": [
+        "The construction of the Great Pyramids was primarily motivated by religious, political, and cultural factors.",
+        "In ancient Egyptian society, the construction of monumental tombs, such as pyramids, was seen as a crucial aspect of ensuring the pharaoh's transition to the afterlife and maintaining his divine status.",
+        "Grandiose monuments served to reinforce the pharaoh's power and authority over his subjects, as well as to showcase the wealth and capabilities of the Egyptian state"
+    ],
+    "consequences": [
+        "In the short term, it provided employment and economic opportunities for the workforce involved in its construction, while also contributing to the development of engineering and architectural techniques",
+        "The immense resources and labour required for its construction likely placed a strain on the Egyptian economy and society."
+    ],
+    "historiography": [
+        "Over time, scholars have developed various theories and interpretations regarding its construction techniques, purpose, and cultural significance.",
+        "Early interpretations often emphasised mystical or esoteric explanations, attributing the pyramid's construction to supernatural forces or lost civilisations",
+        "Recently, archaeological evidence and scholarly research have shed light on the practical aspects of pyramid construction."
+    ],
+    "significance": "The Great Pyramid of Giza is one of the most iconic and enduring symbols of ancient Egyptian civilization, showcasing the architectural and engineering prowess of the ancient Egyptians.",
+    "legacy": "The construction of the Great Pyramid of Giza has left a lasting legacy in the fields of architecture, engineering, and archaeology, inspiring awe and fascination for millennia.",
+    "shortSummary": "The construction of the Great Pyramid of Giza took place during the Fourth Dynasty of the Old Kingdom of Egypt.",
+    "longSummary": [
+        "The Great Pyramid was built for Pharaoh Khufu. It is believed to have been constructed over a 20-year period and was originally 146.6 meters (481 feet) tall, making it the tallest man-made structure in the world for over 3,800 years.",
+        "The construction process involved thousands of labourers, skilled craftsmen, and precise engineering techniques to create these impressive structures that have stood the test of time.",
+        "The construction of the pyramids, including the Great Pyramid of Giza, likely involved quarrying, transporting, and stacking massive limestone blocks to form the core structure using a combination of sledges, ramps, and leverage systems, with the outer casing stones added for a smooth finish, showcasing the meticulous craftsmanship and engineering prowess of the ancient Egyptians."
+    ],
+    "participants": [
+        {
+            "name": "Khufu",
+            "role": "the pharaoh for whom it was built"
+        },
+        {
+            "name": "Hemiunu",
+            "role": "vizier, traditionally credited as its architect"
+        }
+    ]
+}

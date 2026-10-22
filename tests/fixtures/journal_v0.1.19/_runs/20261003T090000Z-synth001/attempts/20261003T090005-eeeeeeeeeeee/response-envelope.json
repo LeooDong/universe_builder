@@ -1,0 +1,18 @@
+{
+    "attempt_id": "20261003T090005-eeeeeeeeeeee",
+    "provider": null,
+    "requested_model": "gpt-5-nano",
+    "returned_model": null,
+    "execution_mode": "batch",
+    "provider_request_id": null,
+    "batch_id": "batch_x",
+    "usage": {
+        "input_tokens": 10,
+        "output_tokens": 5,
+        "cache_read_tokens": null,
+        "cache_write_tokens": null,
+        "estimated_cost": null,
+        "available": true
+    },
+    "raw_payload_sha256": "0306d3a45506df106b2d497cf81e8ada9588d5cbdf39cd670ac5cfebda8645ea"
+}

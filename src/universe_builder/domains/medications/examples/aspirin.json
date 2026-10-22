@@ -1,0 +1,17 @@
+{
+    "name": {
+        "common": "Aspirin",
+        "otherNames": ["Acetylsalicylic acid", "ASA"],
+        "sources": ["British National Formulary"],
+        "meaningOfNames": ["From 'a' (acetyl) + 'spir' (Spiraea, the plant source of salicin)"],
+        "longFormInfo": ["One of the most widely used medications worldwide."]
+    },
+    "drugClass": "NSAID",
+    "atcCode": "B01AC06",
+    "routesOfAdministration": ["oral", "rectal"],
+    "indications": [
+        "Headache",
+        "Fever",
+        "Secondary prevention of cardiovascular events"
+    ]
+}

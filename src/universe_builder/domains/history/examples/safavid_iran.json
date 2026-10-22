@@ -1,0 +1,205 @@
+{
+    "name": {
+        "common": "Safavid Iran",
+        "otherNames": [
+            "Safavid Empire",
+            "Safavid dynasty",
+            "Guarded Domains of Iran"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Safavid_Iran",
+            "Rudi Matthee, 'Safavid Dynasty', Encyclopaedia Iranica"
+        ],
+        "meaningOfNames": [
+            "Named after the Safaviyya Sufi order of Ardabil, founded by Sheikh Safi al-Din, from whom the dynasty descended.",
+            "'Guarded Domains of Iran' (Mamalik-e Mahruse-ye Iran) was the state's own name for its realm."
+        ],
+        "longFormInfo": [
+            "The dynasty that reunified Iran in the early sixteenth century and made Twelver Shia Islam its state religion."
+        ]
+    },
+    "dateFounded": {
+        "year": 1501,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Ismail_I"
+        ],
+        "longFormInfo": [
+            "Ismail I took Tabriz from the Aq Qoyunlu and was proclaimed shah in 1501."
+        ]
+    },
+    "dateEnded": {
+        "year": 1736,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "high",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Nader_Shah"
+        ],
+        "longFormInfo": [
+            "Effective Safavid rule ended when Afghan forces took Isfahan in 1722; the dynasty survived as figureheads until Nader Shah deposed the infant Abbas III and took the throne in 1736."
+        ]
+    },
+    "location": {
+        "landmark": null,
+        "city": "Isfahan",
+        "state": "Isfahan Province",
+        "country": "Iran",
+        "latitude": 32.6546,
+        "longitude": 51.668,
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Isfahan"
+        ]
+    },
+    "typeOfGovernment": "monarchy",
+    "capitals": [
+        {
+            "city": "Tabriz",
+            "fromYear": 1501,
+            "toYear": 1555
+        },
+        {
+            "city": "Qazvin",
+            "fromYear": 1555,
+            "toYear": 1598
+        },
+        {
+            "city": "Isfahan",
+            "fromYear": 1598,
+            "toYear": 1722
+        }
+    ],
+    "rulers": [
+        {
+            "name": "Ismail I",
+            "title": "Shah",
+            "reignStart": 1501,
+            "reignEnd": 1524
+        },
+        {
+            "name": "Tahmasp I",
+            "title": "Shah",
+            "reignStart": 1524,
+            "reignEnd": 1576
+        },
+        {
+            "name": "Ismail II",
+            "title": "Shah",
+            "reignStart": 1576,
+            "reignEnd": 1577
+        },
+        {
+            "name": "Mohammad Khodabanda",
+            "title": "Shah",
+            "reignStart": 1578,
+            "reignEnd": 1587
+        },
+        {
+            "name": "Abbas I",
+            "title": "Shah",
+            "reignStart": 1588,
+            "reignEnd": 1629
+        },
+        {
+            "name": "Safi I",
+            "title": "Shah",
+            "reignStart": 1629,
+            "reignEnd": 1642
+        },
+        {
+            "name": "Abbas II",
+            "title": "Shah",
+            "reignStart": 1642,
+            "reignEnd": 1666
+        },
+        {
+            "name": "Suleiman I of Persia",
+            "title": "Shah",
+            "reignStart": 1666,
+            "reignEnd": 1694
+        },
+        {
+            "name": "Sultan Husayn",
+            "title": "Shah",
+            "reignStart": 1694,
+            "reignEnd": 1722
+        },
+        {
+            "name": "Tahmasp II",
+            "title": "Shah",
+            "reignStart": 1722,
+            "reignEnd": 1732
+        },
+        {
+            "name": "Abbas III",
+            "title": "Shah",
+            "reignStart": 1732,
+            "reignEnd": 1736
+        }
+    ],
+    "legendaryRulers": [],
+    "predecessors": [
+        "Aq Qoyunlu",
+        "Timurid Empire"
+    ],
+    "successors": [
+        "Hotak dynasty",
+        "Afsharid Iran"
+    ],
+    "territory": "Iran with the southern Caucasus, eastern Anatolia at first, Mesopotamia for long spells (Baghdad was Safavid in 1508–1534 and 1624–1638), and western Afghanistan around Herat, with Kandahar contested with the Mughals. The Ottoman–Safavid wars fixed a western frontier close to the modern Iran–Iraq border by the Treaty of Zuhab in 1639.",
+    "modernCountries": [
+        "Iran",
+        "Azerbaijan",
+        "Armenia",
+        "Georgia",
+        "Iraq",
+        "Afghanistan",
+        "Turkmenistan",
+        "Bahrain"
+    ],
+    "languages": [
+        "Persian",
+        "Azerbaijani Turkic",
+        "Arabic",
+        "Georgian"
+    ],
+    "religions": [
+        "Twelver Shia Islam",
+        "Sunni Islam",
+        "Armenian Christianity",
+        "Judaism",
+        "Zoroastrianism"
+    ],
+    "judgments": {
+        "politicalInfluenceInfo": "Reunified Iran and held off the Ottomans and Uzbeks for two centuries; its borders shaped modern Iran.",
+        "politicalInfluenceScore": 8,
+        "culturalContributionInfo": "Abbas I's Isfahan, the Naqsh-e Jahan Square, miniature painting and carpets mark a high point of Persian art.",
+        "culturalContributionScore": 9,
+        "scientificAdvancementInfo": "The School of Isfahan in philosophy (Mulla Sadra, Mir Damad); less distinguished in the natural sciences.",
+        "scientificAdvancementScore": 5,
+        "ethicalLegacyInfo": "The imposition of Shiism involved the persecution of Sunnis; forced deportations from the Caucasus under Abbas I.",
+        "ethicalLegacyScore": 4,
+        "economicImpactInfo": "Silk exports, the Armenian merchant network of New Julfa and Gulf trade made Isfahan a commercial hub.",
+        "economicImpactScore": 7,
+        "militaryImpactInfo": "Defeated at Chaldiran (1514) but reformed its army under Abbas I, retook Baghdad (1624) and, with English help, took Hormuz from the Portuguese (1622).",
+        "militaryImpactScore": 6,
+        "surpriseOfImpactInfo": "A Sufi order became a dynasty and converted a largely Sunni country to Shiism within a few generations.",
+        "surpriseOfImpactScore": 8,
+        "sources": [
+            "Rudi Matthee, 'Safavid Dynasty', Encyclopaedia Iranica"
+        ]
+    },
+    "significance": "It re-created a unified Iranian state after centuries of division and, by making Twelver Shiism its state religion, made it the defining religion of Iran.",
+    "legacy": "Iran's Shia identity, much of its modern frontier and the monuments of Isfahan are Safavid legacies.",
+    "shortSummary": "The dynasty that ruled Iran from 1501 to 1736, founded by Ismail I, which made Twelver Shia Islam the state religion and made Isfahan its capital under Abbas I.",
+    "longSummary": [
+        "Ismail I, head of the Safaviyya order, took Tabriz in 1501 and within a decade ruled most of Iran.",
+        "Under Abbas I (1588–1629) the state recovered territory from the Ottomans and Uzbeks and moved its capital to Isfahan, which he rebuilt around the Naqsh-e Jahan Square.",
+        "The dynasty declined in the later seventeenth century; Afghan invaders took Isfahan in 1722, after which Tahmasp II held court wherever his supporters could keep him, and Nader Shah ended the line in 1736."
+    ]
+}

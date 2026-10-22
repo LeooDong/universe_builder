@@ -1,0 +1,47 @@
+{
+    "name": {
+        "common": "Book of the Dead",
+        "otherNames": [
+            "Book of Coming Forth by Day",
+            "Todtenbuch"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Book_of_the_Dead",
+            "John H. Taylor (ed.), Journey through the Afterlife: Ancient Egyptian Book of the Dead (British Museum Press, 2010)"
+        ],
+        "meaningOfNames": [
+            "The Egyptian title, rw nw prt m hrw, means 'Spells of Coming Forth by Day'.",
+            "'Book of the Dead' translates 'Todtenbuch', Karl Richard Lepsius's name for it in his edition of 1842."
+        ],
+        "longFormInfo": [
+            "The Egyptian collection of about 190 funerary spells written for the dead on papyrus rolls, shrouds and coffins."
+        ]
+    },
+    "authors": [],
+    "authorshipNote": "Anonymous: composed and compiled by priests over centuries, many spells reworking the Pyramid and Coffin Texts. Scribes made each copy to order, often leaving a blank for the owner's name. The rubric of spell 30B claims Prince Hordjedef found it in the reign of Menkaure.",
+    "dateComposed": {
+        "year": 1550,
+        "month": null,
+        "day": null,
+        "era": "BCE",
+        "certainty": "medium",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Book_of_the_Dead"
+        ],
+        "longFormInfo": [
+            "It grew from the Pyramid Texts (from about 2400 BCE) and the Coffin Texts (from about 2100 BCE); its first spells appear on Queen Mentuhotep's coffin, about 1600 BCE, and it became a papyrus book at the start of the New Kingdom. In use until about 50 BCE; the Saite recension of the Twenty-sixth Dynasty first fixed the order of the spells."
+        ]
+    },
+    "originalLanguage": "Middle Egyptian",
+    "genre": "funerary text",
+    "surviving": "Hundreds of copies, no two with the same selection of spells. The most famous is the Papyrus of Ani (British Museum EA 10470), about 24 metres long, made at Thebes around 1250 BCE; another is the Papyrus of Hunefer (EA 9901). Each copy is an artifact; the work is the body of spells they share.",
+    "significance": "For fifteen centuries the chief guide to the Egyptian afterlife, and the fullest statement of what Egyptians believed happened after death.",
+    "legacy": "Its judgement scene, the heart weighed against the feather of Maat before Osiris, is one of the most reproduced images of ancient Egypt.",
+    "shortSummary": "The anonymous Egyptian collection of funerary spells, written for the dead from about 1550 BCE to the first century BCE, to guide them through the underworld to judgement before Osiris.",
+    "longSummary": [
+        "A buyer chose or paid for a selection of spells, and the richest copies were illustrated with painted vignettes.",
+        "The spells protect the body and give the dead the words to pass the gates and guardians of the underworld.",
+        "In spell 125, first found under Hatshepsut and Thutmose III, the dead deny forty-two sins before the gods and their heart is weighed against the feather of Maat.",
+        "Lepsius's edition and Wallis Budge's translations made it the best-known text of Egyptian religion."
+    ]
+}

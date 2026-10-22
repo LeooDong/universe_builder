@@ -1,0 +1,28 @@
+{
+    "run_id": "20250119T033338Z-c2d74584",
+    "started_utc": "2025-01-19T03:33:38.102448Z",
+    "log_schema_version": 1,
+    "code_revision": null,
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.14",
+            "git_revision": null
+        },
+        "pack": {
+            "name": "history",
+            "module": "pack",
+            "distribution": "pack",
+            "version": "0.2.0"
+        }
+    },
+    "resolved_config_sha256": "914cd9f573f2766379abd125522828410c00c153ff70db0dc6e1540291d1b35d",
+    "config": {
+        "command": "periods",
+        "apply_labels": false,
+        "split": true,
+        "model": null,
+        "note": "details removed from this fixture"
+    },
+    "models": null
+}

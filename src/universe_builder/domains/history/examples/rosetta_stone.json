@@ -1,0 +1,82 @@
+{
+    "name": {
+        "common": "Rosetta Stone",
+        "otherNames": [
+            "Memphis Decree",
+            "Stele of Ptolemy V",
+            "Hajar Rashid"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Rosetta_Stone",
+            "The British Museum — The Rosetta Stone (EA24)",
+            "Britannica — Rosetta Stone"
+        ],
+        "meaningOfNames": [
+            "Named in English after Rosetta, the town where French soldiers found it; 'Rosetta' is the European form of the Arabic 'Rashid', so the Arabic name is 'Hajar Rashid', the Stone of Rashid.",
+            "'Memphis Decree' names the text it carries, promulgated at Memphis in 196 BCE; two other copies of the same decree survive."
+        ],
+        "longFormInfo": [
+            "The Rosetta Stone is a granodiorite stele inscribed with three versions of a decree issued in Memphis, Egypt in 196 BC during the Ptolemaic dynasty. The top and middle texts are in Ancient Egyptian using hieroglyphic and Demotic scripts, while the bottom is in Ancient Greek. It was the key to deciphering Egyptian hieroglyphs."
+        ]
+    },
+    "dateCreated": {
+        "year": 196,
+        "month": null,
+        "day": null,
+        "era": "BCE",
+        "certainty": "certain",
+        "sources": [
+            "The British Museum — The Rosetta Stone (EA24)",
+            "Britannica — Rosetta Stone"
+        ],
+        "longFormInfo": [
+            "The Rosetta Stone was created in 196 BCE during the Ptolemaic dynasty in Egypt."
+        ]
+    },
+    "discoveryLocation": {
+        "landmark": "Fort Julien",
+        "city": "Rashid (Rosetta)",
+        "state": null,
+        "country": "Egypt",
+        "latitude": 31.4044,
+        "longitude": 30.4168,
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Rosetta_Stone",
+            "The British Museum — The Rosetta Stone (EA24)"
+        ]
+    },
+    "dateDiscovered": {
+        "year": 1799,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "certain",
+        "sources": [
+            "The British Museum — The Rosetta Stone (EA24)",
+            "Britannica — Rosetta Stone"
+        ],
+        "longFormInfo": [
+            "The Rosetta Stone was discovered by French soldiers in 1799 during Napoleon's campaign in Egypt."
+        ]
+    },
+    "currentLocation": {
+        "landmark": "British Museum",
+        "city": "London",
+        "state": null,
+        "country": "United Kingdom",
+        "latitude": 51.5194,
+        "longitude": -0.127,
+        "certainty": "certain",
+        "sources": [
+            "The British Museum — The Rosetta Stone (EA24)"
+        ]
+    },
+    "finderOrDiscoveror": "French soldiers",
+    "originalCreator": null,
+    "controversies": "One of the ongoing debates has been about the ownership and repatriation of the Rosetta Stone. After Egypt came under British control in 1801, the stone was taken to England and has been housed in the British Museum since 1802. Egypt, among others, has periodically requested its return, arguing that it is an important part of their cultural heritage.",
+    "challenges": "Deciphering the hieroglyphs on the stone",
+    "significance": "Key to understanding Egyptian hieroglyphs and unlocking the secrets of ancient Egypt",
+    "shortSummary": "The Rosetta Stone is an ancient artifact that played a crucial role in deciphering Egyptian hieroglyphs.",
+    "longSummary": "The Rosetta Stone, created in 196 BCE during the Ptolemaic dynasty in Egypt, was discovered by French soldiers in 1799 at Fort Julien in Rashid (Rosetta), Egypt. It is a granodiorite stele inscribed with a decree in Ancient Egyptian hieroglyphs, Demotic script, and Ancient Greek. Currently housed in the British Museum in London, the Rosetta Stone is of immense significance as it provided the key to understanding Egyptian hieroglyphs and unlocking the mysteries of ancient Egypt."
+}

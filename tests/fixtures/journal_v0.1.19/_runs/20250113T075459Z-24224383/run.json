@@ -1,0 +1,13 @@
+{
+    "run_id": "20250113T075459Z-24224383",
+    "started_utc": "2025-01-13T07:54:59.796704Z",
+    "log_schema_version": 1,
+    "code_revision": "0000000000000000000000000000000000000017",
+    "resolved_config_sha256": "9e3c4b297865e064483d385baa641f4140b85eea1b94717790f4f772802757e1",
+    "config": {
+        "command": "collect",
+        "atom": null,
+        "model": null
+    },
+    "models": null
+}

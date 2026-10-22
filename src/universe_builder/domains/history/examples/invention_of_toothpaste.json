@@ -1,0 +1,81 @@
+{
+    "name": {
+        "common": "Toothpaste",
+        "otherNames": ["Dentifrice"],
+        "sources": ["GPT"],
+        "meaningOfNames": [],
+        "longFormInfo": ["Egyptians invented an early form of toothpaste, which was designed to clean teeth and freshen breath."]
+    },
+    "earliestPhysicalRecord": {
+        "name": "Excavations at Merimde Beni Salama",
+        "ageOfRecord": {
+            "year": 5000,
+            "month": null,
+            "day": null,
+            "era": "BCE",
+            "certainty": "low",
+            "sources": [""],
+            "longFormInfo": ["These excavations unearthed dental tools made from bone and flint. While these tools may have been primarily used for tooth extraction or other dental procedures, their presence suggests that the ancient inhabitants of Egypt had some form of dental care practices."]
+        },
+        "dateOfModernDiscovery": {
+            "year": 1923,
+            "month": null,
+            "day": null,
+            "era": "CE",
+            "certainty": "medium",
+            "sources": [""],
+            "longFormInfo": [
+                "The site was discovered by Hermann Junker during his West Delta Expedition. He excavated the site from 1923 to 1939. In 1976, excavations were continued by the Egyptian Antiquities Organisation.",
+                "In 1977-1982, excavations were conducted by the German Institute of Archaeology in Cairo under the direction of Josef Eiwanger."
+            ]
+        },
+        "location": {
+            "landmark": "Beni Salama",
+            "city": "Natrn Valley",
+            "state": "Beheira Governorate",
+            "country": "Egypt",
+            "latitude": 30.329467,
+            "longitude": 30.454536,
+            "certainty": "medium",
+            "sources": ["GPT"]
+        }
+    },
+    "earliestWrittenRecord": {
+        "name": "Ebers Papyrus",
+        "ageOfRecord": {
+            "year": 1550,
+            "month": null,
+            "day": null,
+            "era": "BCE",
+            "certainty": "medium",
+            "sources": [""],
+            "longFormInfo": ["This ancient document contains various medical prescriptions and remedies, including several related to dental care."]
+        },
+        "dateOfModernDiscovery": {
+            "year": 1872,
+            "month": null,
+            "day": null,
+            "era": "CE",
+            "certainty": "high",
+            "sources": [""],
+            "longFormInfo": ["It was found in the late 19th century CE, specifically in 1872, by the German Egyptologist Georg Ebers, after whom it is named.."]
+        },
+        "location": {
+            "landmark": null,
+            "city": "Thebes",
+            "state": "Luxor",
+            "country": "Egypt",
+            "latitude": 25.72056,
+            "longitude": 32.61028,
+            "certainty": "medium",
+            "sources": [""]
+        }
+    },
+    "discoverorOrInventor": "unknown",
+    "typeOfDiscovery": "spontaneous",
+    "controversies": "There are discussions regarding the extent to which ancient Egyptian dental care practices influenced later cultures or were influenced by neighboring civilisations.",
+    "challenges": "selecting efficacious ingredients in the correct proportions would have ben important.",
+    "significance": "Demonstrated the early understanding of the importance of dental health, as well as the cultural practices related to cleanliness and hygiene.",
+    "shortSummary": "These substances served to clean teeth, freshen breath, and maintain oral hygiene. Ingredients likely included locally available substances like mint, rock salt, and other aromatic or abrasive materials.",
+    "longSummary": "The invention of toothpaste by the Egyptians represents an early recognition of the importance of oral hygiene and contributed to the advancement of dental care practices throughout history."
+}

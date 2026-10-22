@@ -1,0 +1,57 @@
+# Regime changes at the granularity of `government_enum` — the reference the
+# period lint (`universe_builder periods`) checks city periods against. Same
+# philosophy as aliases.txt: a small, human-curated table resolving exactly
+# what models cannot be trusted to converge on by themselves.
+#
+# Format, one change per line under a `[Civilisation]` scope:
+#
+#     YEAR: government_before -> government_after            # why
+#     YEAR: government_before -> government_after  @Country   # why
+#
+# * YEAR is a signed integer: negative means BCE (-30 is 30 BCE).
+# * Both government values must be `government_enum` members, and they must
+#   DIFFER — a dynasty change that keeps the same enum value (Macedonian
+#   conquest: monarchy -> monarchy) is not a line here, or the lint would
+#   demand splits that change nothing.
+# * `!city:NAME` exempts a city's exact common name (case-insensitive) where
+#   one national boundary does not apply locally; ordinary !Polity rules still
+#   match only the period's polity. The reason and source belong on the line.
+# * A scope's lines apply to the cities that civilisation's History lists.
+#   A civilisation is not a country, though: Greek History lists Alexandria,
+#   Massalia and Chalcedon, and Athens' twentieth-century regime dates say
+#   nothing about any of them. Without a qualifier, one country's modern
+#   politics would be applied to another country's city.
+# * **`@Country` restricts a line to cities that say they are there**, matched
+#   against the atom's `location.country`. Use it for any line about a modern
+#   nation-state. Leave it off for a civilisational change that reached every
+#   city the History lists wherever it stood — the Roman conquest did; the
+#   Metapolitefsi did not. A city with no country recorded is excluded from a
+#   qualified line rather than included, since the alternative brings the false
+#   positives back. Spellings are folded, so `Türkiye` matches `Turkey`.
+# * **`!Polity` exempts a period whose own `polity` is that state** (several
+#   allowed, after any `@Country`): `@Greece !Kingdom of Italy` keeps Athens'
+#   1924 republic off Rhodes' Italian period (1912-47), which shares the
+#   country but not the government.
+# * A city listed by two civilisations still gets both tables. That is correct
+#   for ancient lines and now harmless for modern ones.
+# * The lint flags a period when a line's YEAR falls strictly inside its span
+#   (open-ended periods extend to the present). `universe_builder periods
+#   --split` sends only flagged periods for splitting.
+#
+# This is a sample written for the example pack, not a curated table.
+
+[Egyptian History]
+-525: monarchy -> autocracy       @Egypt  # Persian conquest
+-332: autocracy -> monarchy       @Egypt  # Alexander, then the Ptolemies
+-30: monarchy -> autocracy        !Kingdom of Kush  # Roman conquest; Kush was never Ptolemaic
+1953: monarchy -> modern republic @Egypt  # republic declared after the 1952 revolution
+
+[Greek History]
+-146: democracy -> autocracy      @Greece  # Roman conquest of the Greek leagues
+1924: monarchy -> modern republic @Greece !Kingdom of Italy  # Second Hellenic Republic; Rhodes was Italian
+1935: modern republic -> monarchy @Greece !Kingdom of Italy  # monarchy restored
+1967: monarchy -> autocracy        @Greece  # the colonels' junta
+1974: autocracy -> modern republic @Greece !city:Nicosia  # Metapolitefsi; Cyprus had its own government
+
+[Roman History]
+-27: classical republic -> autocracy  # Augustus: the Republic becomes the Principate

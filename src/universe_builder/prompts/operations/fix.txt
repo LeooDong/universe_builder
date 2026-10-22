@@ -1,0 +1,5 @@
+The JSON below failed schema validation. Fix it.
+Read every field first and understand the full context, then break it down into
+individual questions per JSON object and make it more accurate to the best of
+your knowledge, including filling in blank and null fields where you know the
+answer. Return only the corrected JSON.

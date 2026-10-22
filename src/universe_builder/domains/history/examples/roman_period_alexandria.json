@@ -1,0 +1,58 @@
+{
+    "periodName": "Roman Period",
+    "periodStart": {
+        "year": 30,
+        "month": null,
+        "day": null,
+        "era": "BCE",
+        "certainty": "high",
+        "sources": [
+            "Cassius Dio, Roman History, Book 51, describing Octavian's annexation of Egypt in 30 BCE",
+            "Alan K. Bowman, Egypt after the Pharaohs: 332 BC–AD 642, University of California Press, 1986"
+        ],
+        "longFormInfo": [
+            "Alexandria became the administrative centre of Roman Egypt after Octavian defeated Cleopatra VII and Mark Antony in 30 BCE.",
+            "The city remained under Roman imperial rule until the administrative and political transition conventionally associated with the Byzantine period after the division of the Roman Empire in 395 CE."
+        ],
+        "cityPopulationRange": [
+            300000,
+            500000
+        ],
+        "averageCityPopulation": 400000
+    },
+    "periodEnd": {
+        "year": 395,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "medium",
+        "sources": [
+            "Alan K. Bowman, Egypt after the Pharaohs: 332 BC–AD 642, University of California Press, 1986",
+            "The Oxford Dictionary of Byzantium, Oxford University Press, 1991, entry on Egypt"
+        ],
+        "longFormInfo": [
+            "The year 395 CE is used as the conventional boundary between the Roman and Byzantine periods following the permanent division of the Roman Empire after the death of Theodosius I.",
+            "Roman administrative institutions and cultural influences continued beyond 395 CE, so the boundary is chronological and conventional rather than an abrupt local political rupture."
+        ]
+    },
+    "certainty": "high",
+    "typeOfGovernment": "autocracy",
+    "polity": "Roman Empire",
+    "selfRule": null,
+    "tradeAndCommerce": [
+        "Exports included grain, papyrus, textiles, glass, Egyptian luxury goods and spices trans-shipped through the Red Sea.",
+        "Imports included wine, olive oil, timber, metals, manufactured goods and luxury products from the wider Mediterranean and Indian Ocean networks."
+    ],
+    "tradingPartners": [
+        "Roman Italy and the wider Roman Mediterranean",
+        "Arabian and Red Sea trading communities",
+        "India",
+        "Nubia and the African interior",
+        "Levantine ports and Syria"
+    ],
+    "languagesSpoken": [
+        "Greek",
+        "Egyptian",
+        "Latin"
+    ]
+}

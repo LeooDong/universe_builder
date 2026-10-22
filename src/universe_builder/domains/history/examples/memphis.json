@@ -1,0 +1,174 @@
+{
+    "name": {
+        "common": "Memphis",
+        "otherNames": [
+            "Men-nefer",
+            "Mennefer",
+            "Inbu-hedj",
+            "Hut-ka-Ptah",
+            "Hikuptah",
+            "Mit Rahina"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Memphis,_Egypt",
+            "Britannica — Memphis, ancient city, Egypt",
+            "UNESCO World Heritage Centre — Memphis and its Necropolis"
+        ],
+        "meaningOfNames": [
+            "'Men-nefer' ('Enduring and Beautiful') was the Egyptian name, taken from the pyramid town of Pepi I; 'Memphis' is the Greek rendering of it.",
+            "'Inbu-hedj' ('White Walls') was the older name for the walled settlement.",
+            "'Hut-ka-Ptah' ('Estate of the Ka of Ptah') named the temple precinct; Greek 'Aigyptos', and so 'Egypt', descends from it.",
+            "'Mit Rahina' is the modern Arabic name of the village on the site."
+        ],
+        "longFormInfo": [
+            "Memphis was the ancient capital of Aneb-Hetch, the first nome of Lower Egypt. Its ruins are located near the modern town of Mit Rahina, 20 km (12 mi) south of Giza in Greater Cairo, Egypt."
+        ]
+    },
+    "foundingDate": {
+        "year": 3100,
+        "month": null,
+        "day": null,
+        "era": "BCE",
+        "certainty": "high",
+        "sources": [
+            "Britannica — Memphis, ancient city, Egypt",
+            "https://en.wikipedia.org/wiki/Memphis,_Egypt"
+        ],
+        "longFormInfo": [
+            "The founding date of Memphis, Egypt is estimated to be around 3100 BCE during the Early Dynastic Period of Egypt."
+        ]
+    },
+    "dateOfDemise": {
+        "year": 525,
+        "month": null,
+        "day": null,
+        "era": "BCE",
+        "certainty": "high",
+        "sources": [
+            "Britannica — Memphis, ancient city, Egypt",
+            "Herodotus, Histories III"
+        ],
+        "longFormInfo": [
+            "Memphis, Egypt declined after the Persian conquest of Egypt in 525 BCE, marking the end of its prominence as a capital city."
+        ]
+    },
+    "location": {
+        "landmark": "Ruins of Memphis",
+        "city": "Mit Rahina",
+        "state": "Giza",
+        "country": "Egypt",
+        "latitude": 29.8484,
+        "longitude": 31.2504,
+        "certainty": "high",
+        "sources": [
+            "UNESCO World Heritage Centre — Memphis and its Necropolis",
+            "https://en.wikipedia.org/wiki/Memphis,_Egypt"
+        ]
+    },
+    "cityPeriodsOfHistory": [
+        "Ancient Egypt",
+        "Old Kingdom",
+        "First Intermediate Period",
+        "Middle Kingdom",
+        "New Kingdom",
+        "Late Period"
+    ],
+    "geographyAndClimate": {
+        "elevationMetres": 30.0,
+        "january": {
+            "monthlyAverageTempCelsius": 13.0,
+            "monthlyAveragePrecipMillimetres": 5.0,
+            "monthlyAverageHumidityPercent": 60.0
+        },
+        "february": {
+            "monthlyAverageTempCelsius": 15.0,
+            "monthlyAveragePrecipMillimetres": 3.0,
+            "monthlyAverageHumidityPercent": 55.0
+        },
+        "march": {
+            "monthlyAverageTempCelsius": 18.0,
+            "monthlyAveragePrecipMillimetres": 3.0,
+            "monthlyAverageHumidityPercent": 50.0
+        },
+        "april": {
+            "monthlyAverageTempCelsius": 22.0,
+            "monthlyAveragePrecipMillimetres": 2.0,
+            "monthlyAverageHumidityPercent": 45.0
+        },
+        "may": {
+            "monthlyAverageTempCelsius": 26.0,
+            "monthlyAveragePrecipMillimetres": 1.0,
+            "monthlyAverageHumidityPercent": 40.0
+        },
+        "june": {
+            "monthlyAverageTempCelsius": 29.0,
+            "monthlyAveragePrecipMillimetres": 0.0,
+            "monthlyAverageHumidityPercent": 35.0
+        },
+        "july": {
+            "monthlyAverageTempCelsius": 30.0,
+            "monthlyAveragePrecipMillimetres": 0.0,
+            "monthlyAverageHumidityPercent": 30.0
+        },
+        "august": {
+            "monthlyAverageTempCelsius": 30.0,
+            "monthlyAveragePrecipMillimetres": 0.0,
+            "monthlyAverageHumidityPercent": 30.0
+        },
+        "september": {
+            "monthlyAverageTempCelsius": 28.0,
+            "monthlyAveragePrecipMillimetres": 0.0,
+            "monthlyAverageHumidityPercent": 35.0
+        },
+        "october": {
+            "monthlyAverageTempCelsius": 24.0,
+            "monthlyAveragePrecipMillimetres": 1.0,
+            "monthlyAverageHumidityPercent": 40.0
+        },
+        "november": {
+            "monthlyAverageTempCelsius": 19.0,
+            "monthlyAveragePrecipMillimetres": 2.0,
+            "monthlyAverageHumidityPercent": 45.0
+        },
+        "december": {
+            "monthlyAverageTempCelsius": 15.0,
+            "monthlyAveragePrecipMillimetres": 4.0,
+            "monthlyAverageHumidityPercent": 55.0
+        }
+    },
+    "judgments": {
+        "politicalInfluenceInfo": "Memphis was a significant political and administrative centre in Ancient Egypt.",
+        "politicalInfluenceScore": 9,
+        "culturalContributionInfo": "Memphis was a hub of art, culture, and religious activities.",
+        "culturalContributionScore": 7,
+        "scientificAdvancementInfo": "Known for architectural achievements and early medical practices.",
+        "scientificAdvancementScore": 4,
+        "ethicalLegacyInfo": "Contributed to the development of ethical and moral principles in Ancient Egypt.",
+        "ethicalLegacyScore": 2,
+        "economicImpactInfo": "Thriving trade and commerce centre due to its strategic location.",
+        "economicImpactScore": 9,
+        "militaryImpactInfo": "Strategic importance led to military conflicts and defenses.",
+        "militaryImpactScore": 5,
+        "surpriseOfImpactInfo": "Memphis's influence extended beyond Egypt, impacting neighbouring regions.",
+        "surpriseOfImpactScore": 7,
+        "sources": [
+            "Britannica — Memphis, ancient city, Egypt",
+            "https://en.wikipedia.org/wiki/Memphis,_Egypt"
+        ]
+    },
+    "architecturalHighlights": [
+        "Great Sphinx of Giza",
+        "Pyramids of Giza",
+        "Temple of Ptah",
+        "Memphis Open-Air Museum"
+    ],
+    "notableFigures": [
+        "Narmer",
+        "Imhotep",
+        "Ramses II",
+        "Hatshepsut"
+    ],
+    "popCulturalReferences": [
+        "Memphis mentioned in various novels and films as a symbol of ancient Egypt's grandeur."
+    ]
+}

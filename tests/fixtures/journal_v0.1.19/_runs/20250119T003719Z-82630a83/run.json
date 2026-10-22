@@ -1,0 +1,36 @@
+{
+    "run_id": "20250119T003719Z-82630a83",
+    "started_utc": "2025-01-19T00:37:19.855345Z",
+    "log_schema_version": 1,
+    "code_revision": null,
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.11",
+            "git_revision": null
+        },
+        "pack": {
+            "name": "history",
+            "module": "pack",
+            "distribution": "pack",
+            "version": "0.2.0"
+        }
+    },
+    "resolved_config_sha256": "3683c63b408498b217f102a1a61e26ac495e08a27a93d5473289f46339d91284",
+    "config": {
+        "phase": "verify",
+        "atoms": [
+            "artifact",
+            "discovery"
+        ],
+        "targets": [
+            "artifact_h0000000000000144_subject_33_gpt-5.6-luna.json",
+            "discovery_h0000000000000148_subject_35_gpt-5.6-luna.json",
+            "discovery_h0000000000000146_subject_34_gpt-5.6-luna.json"
+        ],
+        "note": "details removed from this fixture"
+    },
+    "models": {
+        "verify": "{'artifact': 'gpt-5.6-luna', 'discovery': 'gpt-5.6-luna'}"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "run_id": "20250119T093306Z-d1401b08",
+    "started_utc": "2025-01-19T09:33:06.209680Z",
+    "log_schema_version": 1,
+    "code_revision": null,
+    "provenance": {
+        "engine": {
+            "distribution": "universe_builder",
+            "version": "0.1.14",
+            "git_revision": null
+        },
+        "pack": {
+            "name": "history",
+            "module": "pack",
+            "distribution": "pack",
+            "version": "0.2.0"
+        }
+    },
+    "resolved_config_sha256": "3bfde3a753880f0aa6b9e094341122f116e07615444fca2c0bfda1f9e24ffe07",
+    "config": {
+        "command": "retire-list",
+        "file": "retire.txt",
+        "atoms": 17
+    },
+    "models": null
+}

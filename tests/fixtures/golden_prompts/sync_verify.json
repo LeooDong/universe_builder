@@ -1,0 +1,46 @@
+[
+ {
+  "custom_id": "thebes luxor",
+  "model": "gpt-5-nano",
+  "schema_model": "City",
+  "max_tokens": 32768,
+  "system": "You are a historian with a comprehensive understanding of history, and an expert on dates and places.\nFill in the JSON schema you are given for the subject named, to the best of your ability.\nIf unsure of a value, leave it blank or null and say so in the corresponding certainty field;\nan empty field is better than a wrong one.\nGive your answers in UK English spelling.\nA date known only to its century or period is not a year: do not put a year inside that century\nas though it were exact. Leave the year empty and give the century in the date's notes.\nFor latitude and longitude coordinates,\n    make sure they match the corresponding description of the location\n    (landmark, city, state and country).\nFor sources, be specific: name a work, an institution, or a URL.\nYour own training is not a source, and neither is \"common knowledge\" —\n    if that is all you have, leave the sources list empty and say so in the certainty.\nFollow the examples provided for the shape and depth of an answer.\n\nValidate and verify the JSON below.\nMake it more accurate to the best of your knowledge and expand on the\ninformation, including filling in blank and null fields where you know the\nanswer. Do not change the JSON object structure. Return only the updated JSON.",
+  "user": "Provide a response for the city commonly known as 'thebes luxor'\n\nThe subject is thebes luxor. Here is the JSON to work on:\n{\"name\": {\"common\": \"x\", \"otherNames\": [], \"sources\": [\"x\"], \"meaningOfNames\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"foundingDate\": {\"year\": 1, \"month\": 1, \"day\": 1, \"era\": \"CE\", \"certainty\": \"none\", \"sources\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"dateOfDemise\": {\"year\": 1, \"month\": 1, \"day\": 1, \"era\": \"CE\", \"certainty\": \"none\", \"sources\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"location\": {\"landmark\": \"x\", \"city\": \"x\", \"state\": \"x\", \"country\": \"x\", \"latitude\": 1.0, \"longitude\": 1.0, \"certainty\": \"none\", \"sources\": [\"x\"]}, \"cityPeriodsOfHistory\": [\"New Kingdom\", \"Late Period\"], \"geographyAndClimate\": {\"elevationMetres\": 1.0, \"january\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"february\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"march\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"april\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"may\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"june\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"july\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"august\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"september\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"october\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"november\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}, \"december\": {\"monthlyAverageTempCelsius\": 1.0, \"monthlyAveragePrecipMillimetres\": 1.0, \"monthlyAverageHumidityPercent\": 1.0}}, \"judgments\": {\"politicalInfluenceInfo\": \"x\", \"politicalInfluenceScore\": 1, \"culturalContributionInfo\": \"x\", \"culturalContributionScore\": 1, \"scientificAdvancementInfo\": \"x\", \"scientificAdvancementScore\": 1, \"ethicalLegacyInfo\": \"x\", \"ethicalLegacyScore\": 1, \"economicImpactInfo\": \"x\", \"economicImpactScore\": 1, \"militaryImpactInfo\": \"x\", \"militaryImpactScore\": 1, \"surpriseOfImpactInfo\": \"x\", \"surpriseOfImpactScore\": 1, \"sources\": [\"x\"]}, \"architecturalHighlights\": [\"x\"], \"notableFigures\": [\"x\"], \"popCulturalReferences\": [\"x\"]}",
+  "examples": [
+   {
+    "user": "Provide a response for the city commonly known as 'memphis'",
+    "assistant_sha256": "2e2f37d5d84dcd6389df2c7cc5f0e9544815b7b540f8e0115fa213ef90bca220"
+   },
+   {
+    "user": "Provide a response for the city commonly known as 'sardis'",
+    "assistant_sha256": "6a1998fc4f3f341aea09a5e88b8e269955db033a0f752af39a9ffb78a1f80ea1"
+   }
+  ],
+  "metadata": {
+   "atom_type": "city",
+   "subject": "thebes luxor"
+  }
+ },
+ {
+  "custom_id": "calendar",
+  "model": "gpt-5-nano",
+  "schema_model": "Discovery",
+  "max_tokens": 32768,
+  "system": "You are a historian with a comprehensive understanding of history, and an expert on dates and places.\nFill in the JSON schema you are given for the subject named, to the best of your ability.\nIf unsure of a value, leave it blank or null and say so in the corresponding certainty field;\nan empty field is better than a wrong one.\nGive your answers in UK English spelling.\nA date known only to its century or period is not a year: do not put a year inside that century\nas though it were exact. Leave the year empty and give the century in the date's notes.\nFor latitude and longitude coordinates,\n    make sure they match the corresponding description of the location\n    (landmark, city, state and country).\nFor sources, be specific: name a work, an institution, or a URL.\nYour own training is not a source, and neither is \"common knowledge\" —\n    if that is all you have, leave the sources list empty and say so in the certainty.\nFollow the examples provided for the shape and depth of an answer.\n\nValidate and verify the JSON below.\nMake it more accurate to the best of your knowledge and expand on the\ninformation, including filling in blank and null fields where you know the\nanswer. Do not change the JSON object structure. Return only the updated JSON.",
+  "user": "Provide a response for the discovery or invention commonly known as 'calendar'\n\nThe subject is calendar. Here is the JSON to work on:\n{\"name\": {\"common\": \"x\", \"otherNames\": [], \"sources\": [\"x\"], \"meaningOfNames\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"earliestPhysicalRecord\": {\"name\": \"x\", \"ageOfRecord\": {\"year\": 1, \"month\": 1, \"day\": 1, \"era\": \"CE\", \"certainty\": \"none\", \"sources\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"dateOfModernDiscovery\": {\"year\": 1, \"month\": 1, \"day\": 1, \"era\": \"CE\", \"certainty\": \"none\", \"sources\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"location\": {\"landmark\": \"x\", \"city\": \"x\", \"state\": \"x\", \"country\": \"x\", \"latitude\": 1.0, \"longitude\": 1.0, \"certainty\": \"none\", \"sources\": [\"x\"]}}, \"earliestWrittenRecord\": {\"name\": \"x\", \"ageOfRecord\": {\"year\": 1, \"month\": 1, \"day\": 1, \"era\": \"CE\", \"certainty\": \"none\", \"sources\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"dateOfModernDiscovery\": {\"year\": 1, \"month\": 1, \"day\": 1, \"era\": \"CE\", \"certainty\": \"none\", \"sources\": [\"x\"], \"longFormInfo\": [\"x\"]}, \"location\": {\"landmark\": \"x\", \"city\": \"x\", \"state\": \"x\", \"country\": \"x\", \"latitude\": 1.0, \"longitude\": 1.0, \"certainty\": \"none\", \"sources\": [\"x\"]}}, \"discoverorOrInventor\": \"x\", \"typeOfDiscovery\": \"spontaneous\", \"controversies\": \"x\", \"challenges\": \"x\", \"significance\": \"x\", \"shortSummary\": \"A calendar.\", \"longSummary\": \"x\"}",
+  "examples": [
+   {
+    "user": "Provide a response for the discovery or invention commonly known as 'invention of toothpaste'",
+    "assistant_sha256": "f29f5dec462a330f47d3e5f6588b0dd95b4c34f888bf74e05d0630404c8d4779"
+   },
+   {
+    "user": "Provide a response for the discovery or invention commonly known as 'hieroglyphic writing'",
+    "assistant_sha256": "e52f97f724948f35f4dcbb7cac219de8eb7382e51b8692316180f5910f2a22b9"
+   }
+  ],
+  "metadata": {
+   "atom_type": "discovery",
+   "subject": "calendar"
+  }
+ }
+]

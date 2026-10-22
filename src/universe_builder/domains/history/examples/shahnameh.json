@@ -1,0 +1,50 @@
+{
+    "name": {
+        "common": "Shahnameh",
+        "otherNames": [
+            "Shahnama",
+            "Book of Kings",
+            "Šāhnāma"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Shahnameh",
+            "Djalal Khaleghi-Motlagh, 'Ferdowsi, Abu'l-Qāsem i. Life', Encyclopaedia Iranica",
+            "Dick Davis (trans.), Shahnameh: The Persian Book of Kings (Viking, 2006)"
+        ],
+        "meaningOfNames": [
+            "Persian for 'Book of Kings'."
+        ],
+        "longFormInfo": [
+            "Ferdowsi's verse epic of the Persian kings from the creation of the world to the Arab conquest of the seventh century."
+        ]
+    },
+    "authors": [
+        "Ferdowsi"
+    ],
+    "authorshipNote": "Ferdowsi drew on an earlier prose Shahnameh compiled in 957 and on verses by the poet Daqiqi, which he incorporated.",
+    "dateComposed": {
+        "year": 1010,
+        "month": null,
+        "day": null,
+        "era": "CE",
+        "certainty": "high",
+        "sources": [
+            "Djalal Khaleghi-Motlagh, 'Ferdowsi, Abu'l-Qāsem i. Life', Encyclopaedia Iranica"
+        ],
+        "longFormInfo": [
+            "Written over about thirty years; a first version was finished in 994 and the final version in 1010, dedicated to Mahmud of Ghazni."
+        ]
+    },
+    "originalLanguage": "Persian",
+    "genre": "epic poem",
+    "surviving": "In hundreds of manuscripts. The oldest dated one, of 1217, in the Biblioteca Nazionale Centrale, Florence, holds only about half the poem; the oldest complete copy, of 1276–77, is in the British Library. The most celebrated copies are illustrated manuscripts such as the Great Mongol Shahnameh and the Shahnameh of Shah Tahmasp.",
+    "significance": "At about 50,000 couplets, it is the national epic of Iran and the Persian-speaking world, written in a Persian with few Arabic loanwords.",
+    "legacy": "It preserved Iran's pre-Islamic legends and history, shaped modern Persian, and has been recited and illustrated for a thousand years; heroes such as Rostam remain household names.",
+    "shortSummary": "Ferdowsi's Persian epic poem of about 50,000 couplets, completed in 1010, telling the history of Iran's kings from mythical times to the fall of the Sasanian Empire.",
+    "longSummary": [
+        "It runs from the mythical first kings through the heroic age of Rostam to the historical Sasanian dynasty and the Arab conquest.",
+        "Ferdowsi wrote it in the Samanid and early Ghaznavid period, when Persian was re-emerging as a literary language.",
+        "Its manuscripts became the principal vehicle of Persian miniature painting.",
+        "It has been recited by professional storytellers (naqqals) in coffee houses and zurkhanehs for centuries, recited on Yalda night and taught in schools, and translated into many languages; Mohl's French edition (1838–1878), Arthur and Edmond Warner's English verse translation (1905–1925) and Dick Davis's prose-and-verse translation brought it to Western readers."
+    ]
+}

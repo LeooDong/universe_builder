@@ -1,0 +1,100 @@
+{
+    "name": {
+        "common": "Osiris",
+        "otherNames": [
+            "Wesir",
+            "Usir",
+            "Wenennefer",
+            "Onnophris"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Osiris",
+            "Richard H. Wilkinson, The Complete Gods and Goddesses of Ancient Egypt (Thames & Hudson, 2003)",
+            "Plutarch, On Isis and Osiris (De Iside et Osiride)"
+        ],
+        "meaningOfNames": [
+            "'Osiris' is the Greek form of the Egyptian Wsjr, conventionally 'Wesir' or 'Usir'; its meaning is uncertain, and proposals include 'the Mighty One' and 'seat of the eye'.",
+            "'Wenennefer', 'the one who is perfect' or 'eternally good', was his principal epithet, rendered in Greek as 'Onnophris'.",
+            "'Khentiamentiu', 'Foremost of the Westerners', the dead, was the name of an older jackal god of Abydos whose identity Osiris absorbed."
+        ],
+        "longFormInfo": [
+            "The Egyptian god of the dead, the afterlife and rebirth, killed by his brother Set and restored by his wife Isis."
+        ]
+    },
+    "kind": "deity",
+    "historicity": "mythical",
+    "cultures": [
+        "Ancient Egyptian religion",
+        "Greco-Roman mystery cults of Isis"
+    ],
+    "roles": [
+        "god of the dead and ruler of the underworld",
+        "judge of the dead",
+        "god of resurrection and fertility, the annual flood and the growth of grain"
+    ],
+    "attributes": [
+        "crook and flail",
+        "atef crown",
+        "mummy wrappings",
+        "green or black skin, for vegetation and the fertile silt",
+        "the djed pillar"
+    ],
+    "parents": [
+        "Geb",
+        "Nut"
+    ],
+    "siblings": [
+        "Isis",
+        "Set",
+        "Nephthys"
+    ],
+    "consorts": [
+        "Isis",
+        "Nephthys"
+    ],
+    "children": [
+        "Horus",
+        "Anubis"
+    ],
+    "identifiedWith": [
+        "Dionysus",
+        "Serapis"
+    ],
+    "places": [
+        "Abydos",
+        "Busiris"
+    ],
+    "temples": [
+        "Osireion",
+        "Temple of Seti I at Abydos"
+    ],
+    "appearsIn": [
+        "Osiris myth",
+        "Pyramid Texts",
+        "Coffin Texts",
+        "Book of the Dead",
+        "Contendings of Horus and Seth"
+    ],
+    "earliestAttestation": {
+        "year": 2400,
+        "month": null,
+        "day": null,
+        "era": "BCE",
+        "certainty": "medium",
+        "sources": [
+            "Richard H. Wilkinson, The Complete Gods and Goddesses of Ancient Egypt (Thames & Hudson, 2003)"
+        ],
+        "longFormInfo": [
+            "Osiris first appears in the Fifth Dynasty, around 2400 BCE, in offering formulae and then in the Pyramid Texts of Unas."
+        ]
+    },
+    "significance": "Osiris made the afterlife reachable: from the end of the Old Kingdom not only the king but every justified dead Egyptian became 'an Osiris', and his death and restoration were the pattern of royal succession, with the dead king becoming Osiris and his heir Horus.",
+    "legacy": "His myth is known most fully from Plutarch, and the cult of Isis and Osiris spread across the Roman world; the weighing of the heart before him in the Book of the Dead is one of the best-known images of ancient Egypt.",
+    "shortSummary": "The Egyptian god of the dead, the afterlife and rebirth, murdered by his brother Set, restored by Isis, and father of Horus.",
+    "longSummary": [
+        "In the myth Set kills Osiris and scatters his body; Isis, with Nephthys, gathers the pieces, revives him long enough to conceive Horus, and Osiris becomes king of the dead while Horus avenges him and takes the throne. In Plutarch's telling Nephthys also bore Osiris a son, Anubis.",
+        "From the Middle Kingdom his cult centre at Abydos drew pilgrims and a yearly festival re-enacting his death and return, and his role as judge of the dead opened the afterlife to everyone who could be justified before him.",
+        "Under the Ptolemies he was joined with Apis as Serapis, and Greeks equated him with Dionysus, which carried his worship, with that of Isis, around the Mediterranean.",
+        "Plutarch's On Isis and Osiris, written around 100 CE, is the fullest surviving telling of the myth, with a shorter one in Diodorus Siculus; the Egyptian sources give it in allusions, hymns and funerary spells."
+    ]
+}

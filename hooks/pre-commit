@@ -1,0 +1,121 @@
+#!/bin/sh
+# Two guards, in the order that fails cheapest first.
+
+# 1. Refuse a commit made directly on `main`.
+#
+# `main` is the release history: one squashed commit per promotion from `dev`.
+# A commit authored here is how the two branches silently diverge -- `main` runs
+# ahead, `dev` goes stale, and the next branch cut from `dev` (a Codex worktree,
+# say) starts from history missing the newest work. That happened, which is why
+# this exists.
+#
+# The promotion itself is allowed: `git merge --squash dev` leaves SQUASH_MSG in
+# the git directory, and that file is the difference between promoting work and
+# authoring it here.
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+git_dir=$(git rev-parse --git-dir)
+if [ "$branch" = "main" ] && [ ! -f "$git_dir/SQUASH_MSG" ] && [ ! -f "$git_dir/MERGE_HEAD" ]; then
+	cat >&2 <<'MSG'
+refusing to commit directly on `main`.
+
+Work belongs on `dev`; `main` takes one squashed commit per promotion.
+
+  git stash            # if you have uncommitted work here
+  git checkout dev
+  git stash pop
+  git commit
+
+To promote instead:
+
+  git checkout main && git merge --squash dev && git commit
+
+Override for a genuine exception with: git commit --no-verify
+MSG
+	exit 1
+fi
+
+# 2. Run the same flake8 CI runs.
+#
+# CI checks style on every push and a whole session's commits went out red
+# because the suite was run and this was not. It takes about a second; the
+# alternative is finding out from an email after the push.
+#
+# **A linter that cannot run must say so, not pass.** The first version guarded
+# the whole check with `if flake8 is importable`, so on a shell without the
+# project venv on PATH -- the ordinary case, since `python3` there is the system
+# one and has no flake8 -- it skipped silently and the commit succeeded. A
+# deliberate violation was committed at exit 0 while the hook reported nothing.
+# Absence of the linter is a reason to stop, not a reason to continue.
+root=$(git rev-parse --show-toplevel)
+
+# The venv first, since that is where `make lint` gets flake8 from; then
+# whatever `python3` is on PATH, for a clone that installed it globally.
+lint_python=""
+for candidate in "$root/.venv/bin/python" "$root/.venv/bin/python" python3 python; do
+	if command -v "$candidate" >/dev/null 2>&1 && \
+	   "$candidate" -m flake8 --version >/dev/null 2>&1; then
+		lint_python="$candidate"
+		break
+	fi
+done
+
+if [ -z "$lint_python" ]; then
+	cat >&2 <<'MSG'
+cannot run flake8, so this commit is refused rather than waved through.
+
+CI runs `flake8 --max-line-length=119 src tests` on every push, and a hook that
+skips when the linter is missing gives you the appearance of a check without
+one.
+
+  python -m pip install -e '.[dev]'     # or: pip install flake8
+
+Then commit again. To proceed without the check: git commit --no-verify
+MSG
+	exit 1
+fi
+
+if ! "$lint_python" -m flake8 --max-line-length=119 "$root/src" "$root/tests"; then
+	echo "" >&2
+	echo "flake8 failed -- CI runs this exact command and will fail too." >&2
+	echo "Fix the lines above, or commit with --no-verify if you must." >&2
+	exit 1
+fi
+
+# 3. Refuse a staged line copied from private data.
+#
+# `tests/test_no_live_data.py` checks shape, which any clone can run. This
+# checks content, which only a machine holding the private data can.
+# UNIVERSE_BUILDER_PRIVATE_DIRS is a colon-separated list of directories -- a
+# live pack's tables, a data directory -- whose lines must never be committed
+# here. Unset, the check is skipped: a clone without private data has nothing
+# to leak. Only added lines of 20 characters or more are compared, trimmed, as
+# substrings of the private files' non-Python files; a shorter line is too
+# likely to be common, and code a pack shares with the example is not data.
+# Point it at tables, not at a whole corpus: it reads every file each commit.
+if [ -n "${UNIVERSE_BUILDER_PRIVATE_DIRS:-}" ]; then
+	added=$(mktemp)
+	hits=$(mktemp)
+	trap 'rm -f "$added" "$hits"' EXIT
+	git diff --cached --no-color --unified=0 --diff-filter=AMR -- . \
+		| grep '^+' | grep -v '^+++ ' | sed 's/^+//; s/^[[:space:]]*//; s/[[:space:]]*$//' \
+		| awk 'length($0) >= 20' | sort -u > "$added"
+	if [ -s "$added" ]; then
+		old_ifs=$IFS
+		IFS=:
+		for dir in $UNIVERSE_BUILDER_PRIVATE_DIRS; do
+			IFS=$old_ifs
+			if [ ! -d "$dir" ]; then
+				echo "UNIVERSE_BUILDER_PRIVATE_DIRS names $dir, which is not a directory; refusing rather than skipping it." >&2
+				exit 1
+			fi
+			grep -r -F -h -o --exclude='*.py' -f "$added" "$dir" >> "$hits" 2>/dev/null
+		done
+		IFS=$old_ifs
+		if [ -s "$hits" ]; then
+			echo "refusing: staged lines also appear in UNIVERSE_BUILDER_PRIVATE_DIRS:" >&2
+			sort -u "$hits" | head -5 | sed 's/^/  /' >&2
+			echo "Take the copied data out; this repo publishes no private data." >&2
+			exit 1
+		fi
+	fi
+fi

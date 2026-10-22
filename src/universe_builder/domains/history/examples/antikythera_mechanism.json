@@ -1,0 +1,89 @@
+{
+  "name": {
+    "common": "Antikythera Mechanism",
+    "otherNames": [
+      "Antikythera device",
+      "Antikythera computer",
+      "Mechanism from Antikythera"
+    ],
+    "sources": [
+      "Britannica",
+      "The Antikythera Mechanism Research Project (AMRP)",
+      "National Archaeological Museum Athens",
+      "Freeth et al., Nature 444 (2006), 587-591",
+      "https://en.wikipedia.org/wiki/Antikythera_mechanism"
+    ],
+    "meaningOfNames": [
+      "Named after the Greek island of Antikythera; from Greek anti- 'opposite' and Kythera."
+    ],
+    "longFormInfo": [
+      "The Antikythera Mechanism is an ancient Greek geared device dating from the late 2nd century BCE, used to predict astronomical positions and eclipses.",
+      "Fragments were recovered from a shipwreck off the island of Antikythera in 1901; the device is regarded as the earliest known analogue computer."
+    ]
+  },
+  "dateCreated": {
+    "year": 150,
+    "month": null,
+    "day": null,
+    "era": "BCE",
+    "certainty": "medium",
+    "sources": [
+      "Britannica",
+      "AMRP",
+      "Freeth et al., Nature 444 (2006), 587-591"
+    ],
+    "longFormInfo": [
+      "Estimated creation date in the late Hellenistic period, circa 150–100 BCE; constructed with a complex system of gears for astronomical calculations."
+    ]
+  },
+  "discoveryLocation": {
+    "landmark": "wreck site off Antikythera",
+    "city": "Antikythera",
+    "state": null,
+    "country": "Greece",
+    "latitude": 35.8833,
+    "longitude": 23.305,
+    "certainty": "high",
+    "sources": [
+      "Britannica",
+      "AMRP",
+      "National Archaeological Museum Athens"
+    ]
+  },
+  "dateDiscovered": {
+    "year": 1901,
+    "month": null,
+    "day": null,
+    "era": "CE",
+    "certainty": "certain",
+    "sources": [
+      "Britannica",
+      "AMRP",
+      "National Archaeological Museum Athens"
+    ],
+    "longFormInfo": [
+      "The mechanism was recovered during a major salvage expedition from a Greek shipwreck off Antikythera, in 1901."
+    ]
+  },
+  "currentLocation": {
+    "landmark": "National Archaeological Museum",
+    "city": "Athens",
+    "state": null,
+    "country": "Greece",
+    "latitude": 37.975,
+    "longitude": 23.736,
+    "certainty": "certain",
+    "sources": [
+      "National Archaeological Museum Athens",
+      "Britannica",
+      "AMRP"
+    ]
+  },
+  "finderOrDiscoveror": "Greek sponge divers",
+  "originalCreator": "Unknown",
+  "challenges": "Deterioration due to long submersion; fragmentary remnants; complexity of the gear train and reconstruction of the mechanism.",
+  "significance": "Represents one of the most advanced devices of the ancient world; the earliest known complex geared mechanism; reveals sophisticated Greek engineering and astronomical understanding.",
+  "controversies": "Scholarly debates over the exact date and origin of manufacture, the original extent of the device, and whether parts may be missing or replaced.",
+  "shortSummary": "An ancient Greek geared astronomical device dating from the late 2nd century BCE, recovered from the Antikythera shipwreck in 1901; regarded as the oldest known analogue computer capable of predicting celestial positions and eclipses.",
+  "longSummary": "The Antikythera Mechanism is a remarkable artefact from the late Hellenistic period, believed to have been constructed in Greece between circa 150 and 100 BCE. Recovered from a shipwreck off the island of Antikythera during salvage operations in 1901, it comprises a complex arrangement of bronze gears housed in a wooden case. The device functioned as an astronomical calculator, modelling the cycles of the Moon and planets and predicting eclipses. Today, most of its surviving fragments reside in the National Archaeological Museum in Athens, where researchers continue to study its design, manufacture and purpose. The Antikythera Mechanism reveals a sophistication of ancient Greek engineering not thought to have existed at the time and has reshaped our understanding of ancient science and technology."
+}

@@ -1,0 +1,54 @@
+# An alias file in v0.1.19's format, written for this fixture (not a copy of
+# any pack's table). It reaches every branch of v0.1.19's parser: global and
+# scoped lines, `[*]` and `[]`, trailing comments, derived sections and both
+# markers that turn provenance back to asserted.
+
+Amarna (Akhetaten) = Amarna = Akhetaten = Tell el-Amarna
+Hermopolis (Khmun) = Hermopolis Magna (Khmun) = Khmun
+Alexandria = Rhakotis   # the older Egyptian name for the site
+Great Pyramid of Giza = Pyramid of Khufu = Great Pyramid = Pyramid of Cheops = Khufu's Pyramid = Akhet Khufu
+Rosetta Stone = Rosetta Stela
+Ṣalāḥ ad-Dīn = Saladin = Salah al-Din
+Ptolemy I Soter = Ptolemy I
+Hagia Sophia = Ayasofya
+Ka'ba = Kaaba = Kaʿba
+
+[Egyptian History]
+Thebes (Luxor) = Thebes = Luxor = Waset
+Memphis (Egypt) = Memphis = Men-nefer
+
+[Greek History]
+Thebes (Boeotia) = Thebes = Thebai
+Athens = Athenai
+# A contradiction: Athenai in two groups of one scope.
+Athens (Attica) = Athenai
+
+[Byzantine History]
+Abydos (Hellespont) = Abydos
+Constantinople = Byzantium
+
+[*]
+Persepolis = Parsa
+
+# Added by `universe_builder duplicates --apply`: one subject, two atoms.
+[*]
+Mummy of Ramses II = Mummy of Ramesses II
+Founding of Cairo = Foundation of Cairo
+
+# Added by `universe_builder duplicates --apply`: one subject, two atoms.
+[Roman History]
+Pantheon (Rome) = Pantheon of Agrippa
+
+# Added by `universe_builder lint --apply-review`: adjudicated identity.
+[*]
+Book of the Dead = Spells for Coming Forth by Day
+
+# Added by `universe_builder duplicates --apply`: one subject, two atoms.
+[*]
+Antikythera Mechanism = Antikythera device
+
+# Reviewed: adjudicated by hand.
+Hieroglyphic writing = Egyptian hieroglyphs
+
+[]
+Sardis = Sardes   # an empty scope header is global, like [*]

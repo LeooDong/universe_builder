@@ -1,0 +1,66 @@
+# Topic aliases — names the work list should treat as one topic.
+#
+# Grouping in `topics.py` already joins names the data itself declares
+# (`Thebes (Luxor)` links Thebes and Luxor). This file holds the links the
+# data does NOT declare, and the splits that stop one name from crossing
+# civilisations. It is read by `topics.load_aliases`; a missing or empty
+# file simply means grouping runs on declared links alone.
+#
+# Format, one group per line:
+#
+#     Canonical Name = Other Name = Another Name
+#
+# * The FIRST name is canonical: it is the spelling the work list emits when
+#   no stored atom decides otherwise, so pick the form you want in filenames.
+#   If any name in the group already has a real atom on disk, that spelling
+#   wins instead — new lists resolve onto the corpus, whatever this line says.
+#   Inside a SCOPED section that holds only for the first name and for
+#   parenthesised names: a stored atom under a bare non-leading name is taken
+#   to be another civilisation's (the Egyptian `Abydos`, stored bare, must
+#   not capture a Byzantine `Abydos (Hellespont) = Abydos`). If the scope's
+#   own atom was generated under a bare spelling, lead the line with it.
+# * No claim crosses a civilisation boundary unless a line here says so:
+#   a link the data declares serves only the Histories that declared it, so
+#   a Greek `Thebes` never silently joins the Egyptian `Thebes (Luxor)`.
+#   A GLOBAL line (outside any section) is how civilisations join — write
+#   one when the name really is one thing everywhere, like Alexandria.
+# * `[Some Civilisation]` starts a scoped section: the lines under it apply
+#   only to topics from that civilisation's History, and inside it they
+#   outrank everything else. Use a scope to give a shared bare name its own
+#   identity — e.g. under `[Greek History]`, `Thebes (Boeotia) = Thebes`
+#   makes a Greek `Thebes` generate as `Thebes (Boeotia)`, a different file
+#   from the Egyptian city's. `[*]` returns to global. Scope names are
+#   matched ignoring case and punctuation.
+# * `#` starts a comment; blank lines are ignored; case and punctuation
+#   carry no identity when names are compared.
+# * Keep a name in ONE group per scope. The same name in two lines of one
+#   scope is a contradiction: it is warned about at load and every entry
+#   matching it is left ungrouped.
+
+# This is a sample written for the example pack, not a curated table: a few
+# lines of each kind, to show the format and give the tests a real file.
+
+# Global lines: the name is one thing in every civilisation's list.
+Amarna (Akhetaten) = Amarna = Akhetaten = Tell el-Amarna
+Hermopolis (Khmun) = Hermopolis Magna (Khmun) = Khmun
+Taxila (Takshashila) = Taxila = Takshashila
+Peshawar (Purushapura) = Peshawar = Purushapura
+Great Pyramid of Giza = Pyramid of Khufu = Great Pyramid
+Hagia Sophia = Ayasofya = Church of the Holy Wisdom
+Rosetta Stone = Rosetta Stela
+Constantinople = Byzantium = Istanbul
+
+# Scoped lines: one bare name, a different place in each list.
+[Egyptian History]
+Thebes (Luxor) = Thebes = Luxor = Waset
+
+[Greek History]
+Thebes (Boeotia) = Thebes = Thebai
+
+[Byzantine History]
+# The Hellespont town, not the Egyptian Abydos stored under the bare name.
+Abydos (Hellespont) = Abydos
+
+[*]
+# Back to global.
+Persepolis = Parsa = Takht-e Jamshid

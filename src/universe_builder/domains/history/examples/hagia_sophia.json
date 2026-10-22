@@ -1,0 +1,80 @@
+{
+    "name": {
+        "common": "Hagia Sophia",
+        "otherNames": [
+            "Ayasofya",
+            "Church of the Holy Wisdom",
+            "Great Church",
+            "Hagia Sophia Grand Mosque"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Hagia_Sophia",
+            "UNESCO World Heritage Centre — Historic Areas of Istanbul"
+        ],
+        "meaningOfNames": [
+            "Greek for 'Holy Wisdom', dedicated to the Wisdom of God rather than to a saint named Sophia."
+        ],
+        "longFormInfo": [
+            "The domed cathedral of Constantinople built under Justinian I, later a mosque, a museum and again a mosque."
+        ]
+    },
+    "location": {
+        "landmark": "Sultanahmet",
+        "city": "Istanbul",
+        "state": null,
+        "country": "Turkey",
+        "latitude": 41.0086,
+        "longitude": 28.9802,
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Hagia_Sophia"
+        ]
+    },
+    "dateBuilt": {
+        "year": 532,
+        "month": 2,
+        "day": 23,
+        "era": "CE",
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Hagia_Sophia"
+        ],
+        "longFormInfo": [
+            "Construction began weeks after the Nika riots destroyed the previous church on the site."
+        ]
+    },
+    "dateCompleted": {
+        "year": 537,
+        "month": 12,
+        "day": 27,
+        "era": "CE",
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Hagia_Sophia"
+        ],
+        "longFormInfo": [
+            "Dedicated by Justinian I on 27 December 537. The first dome collapsed in 558 and was rebuilt higher by Isidore the Younger, rededicated in 562."
+        ]
+    },
+    "patrons": [
+        "Justinian I"
+    ],
+    "commissioningPolity": "Byzantine Empire",
+    "rediscovery": null,
+    "architects": [
+        "Anthemius of Tralles",
+        "Isidore of Miletus"
+    ],
+    "purpose": "Built as the cathedral of Constantinople and seat of its patriarch. After the Ottoman conquest in 1453 it became a mosque; it was a museum from 1935 and a mosque again from 2020.",
+    "architecturalStyle": "Byzantine: a domed basilica, its dome carried on pendentives",
+    "currentState": "altered",
+    "heritageStatus": "UNESCO World Heritage Site (1985, as part of the Historic Areas of Istanbul)",
+    "significance": "The largest building of the Byzantine world, whose dome set the model for Byzantine and later Ottoman architecture.",
+    "shortSummary": "The sixth-century domed cathedral of Constantinople built for Justinian I in 532–537, converted to a mosque in 1453, a museum in 1935 and a mosque again in 2020.",
+    "longSummary": [
+        "Justinian I rebuilt the church after the Nika riots of 532, with the mathematicians Anthemius of Tralles and Isidore of Miletus as architects.",
+        "For nearly a thousand years it was the largest cathedral in the world and the setting of Byzantine imperial ceremony; crusaders sacked it in 1204.",
+        "Mehmed II made it a mosque after 1453, adding a minaret; later sultans added three more, and Mimar Sinan strengthened it with buttresses in the sixteenth century.",
+        "Atatürk's republic made it a museum, and it was reconverted to a mosque in 2020."
+    ]
+}

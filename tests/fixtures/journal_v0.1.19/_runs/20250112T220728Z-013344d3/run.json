@@ -1,0 +1,20 @@
+{
+    "run_id": "20250112T220728Z-013344d3",
+    "started_utc": "2025-01-12T22:07:28.765506Z",
+    "log_schema_version": 1,
+    "code_revision": "0000000000000000000000000000000000000013",
+    "resolved_config_sha256": "cee301fc9300cb418c2ed3ab8ae1ee80ca3426d87d20a7585051045af0eb7907",
+    "config": {
+        "phase": "create",
+        "atoms": [
+            "event"
+        ],
+        "model": "gpt-6-astra",
+        "source": "cli",
+        "limit": null,
+        "batch": false
+    },
+    "models": {
+        "create": "gpt-6-astra"
+    }
+}

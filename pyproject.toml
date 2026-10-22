@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "universe_builder"
+dynamic = ["version"]   # from universe_builder.__version__, the one source
+description = "A domain-agnostic pipeline for generating a structured, validated JSON corpus with LLMs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.11,<3",  # serialize_by_alias (WireModel) needs >=2.11; verified on 2.11.0 and 2.13.5
+    "python-dotenv>=1.0,<2",
+    # Floors are API-driven, not cosmetic. `OpenAIProvider._body` sends
+    # `max_completion_tokens`, which openai<1.45 rejects with a TypeError before
+    # any request is made; the old >=1.10 floor let a 2024 SDK install cleanly
+    # and fail on the first call. `AnthropicProvider.complete` needs
+    # `messages.parse(output_format=...)`, which predates neither 1.x nor the
+    # old >=0.40 floor. Verified against openai 3.11.0 and anthropic 1.4.0;
+    # the floors themselves have not been installed and tested.
+    "openai>=1.45.0",
+    "anthropic>=1.0.0",
+    # pipeline.yaml: YAML for human-edited config,
+    # JSON everywhere on the wire so responses stay machine-validated.
+    "PyYAML>=6.0",
+    "requests>=2.32.2",
+]
+
+[project.scripts]
+universe_builder = "universe_builder.cli:main"
+
+[project.optional-dependencies]
+google = ["google-genai>=1.0.0"]
+dev = ["pytest>=9", "flake8"]
+
+[tool.setuptools.dynamic]
+version = {attr = "universe_builder.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["universe_builder*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+universe_builder = [
+    "pipeline.yaml",
+    "prompts/*.txt",
+    "prompts/operations/*.txt",
+    "domains/history/examples/*.json",
+    "domains/history/*.txt",
+    "domains/history/README.md",
+    "providers/model_pricing.json",
+    "domains/medications/examples/*.json",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+markers = [
+    "integration: requires a live API key and network. Deselected by default.",
+]
+addopts = '-m "not integration"'
+filterwarnings = ["ignore::DeprecationWarning"]

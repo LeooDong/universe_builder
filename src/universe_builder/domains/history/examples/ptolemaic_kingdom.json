@@ -1,0 +1,234 @@
+{
+    "name": {
+        "common": "Ptolemaic Kingdom",
+        "otherNames": [
+            "Ptolemaic Egypt",
+            "Kingdom of the Ptolemies",
+            "Lagid Kingdom"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom",
+            "Günther Hölbl, A History of the Ptolemaic Empire (Routledge, 2001)"
+        ],
+        "meaningOfNames": [
+            "Named after its founder, Ptolemy I Soter, and the dynasty descended from him; every male ruler took the name Ptolemy.",
+            "'Lagid' is from Lagus, the father of Ptolemy I."
+        ],
+        "longFormInfo": [
+            "The Macedonian Greek kingdom that ruled Egypt from the partition of Alexander the Great's empire until the Roman annexation in 30 BCE."
+        ]
+    },
+    "dateFounded": {
+        "year": 305,
+        "month": null,
+        "day": null,
+        "era": "BCE",
+        "certainty": "high",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Ptolemy_I_Soter"
+        ],
+        "longFormInfo": [
+            "Ptolemy governed Egypt as satrap from 323 BCE, after Alexander's death, and took the title of king in 305 BCE, which is conventionally taken as the kingdom's foundation."
+        ]
+    },
+    "dateEnded": {
+        "year": 30,
+        "month": 8,
+        "day": null,
+        "era": "BCE",
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Cleopatra"
+        ],
+        "longFormInfo": [
+            "After the defeat at Actium, Octavian took Alexandria in August 30 BCE; Cleopatra VII died by suicide and Egypt became a Roman province."
+        ]
+    },
+    "location": {
+        "landmark": null,
+        "city": "Alexandria",
+        "state": null,
+        "country": "Egypt",
+        "latitude": 31.2001,
+        "longitude": 29.9187,
+        "certainty": "certain",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Alexandria"
+        ]
+    },
+    "typeOfGovernment": "monarchy",
+    "capitals": [
+        {
+            "city": "Alexandria",
+            "fromYear": -305,
+            "toYear": -30
+        }
+    ],
+    "rulers": [
+        {
+            "name": "Ptolemy I Soter",
+            "title": "King",
+            "reignStart": -305,
+            "reignEnd": -282
+        },
+        {
+            "name": "Ptolemy II Philadelphus",
+            "title": "King",
+            "reignStart": -284,
+            "reignEnd": -246
+        },
+        {
+            "name": "Ptolemy III Euergetes",
+            "title": "King",
+            "reignStart": -246,
+            "reignEnd": -222
+        },
+        {
+            "name": "Ptolemy IV Philopator",
+            "title": "King",
+            "reignStart": -221,
+            "reignEnd": -204
+        },
+        {
+            "name": "Ptolemy V Epiphanes",
+            "title": "King",
+            "reignStart": -204,
+            "reignEnd": -180
+        },
+        {
+            "name": "Ptolemy VI Philometor",
+            "title": "King",
+            "reignStart": -180,
+            "reignEnd": -145
+        },
+        {
+            "name": "Ptolemy VIII Euergetes II",
+            "title": "King",
+            "reignStart": -170,
+            "reignEnd": -116
+        },
+        {
+            "name": "Cleopatra II of Egypt",
+            "title": "Queen",
+            "reignStart": -170,
+            "reignEnd": -116
+        },
+        {
+            "name": "Ptolemy IX Soter II",
+            "title": "King",
+            "reignStart": -116,
+            "reignEnd": -81
+        },
+        {
+            "name": "Ptolemy X Alexander I",
+            "title": "King",
+            "reignStart": -107,
+            "reignEnd": -88
+        },
+        {
+            "name": "Berenice III of Egypt",
+            "title": "Queen",
+            "reignStart": -101,
+            "reignEnd": -80
+        },
+        {
+            "name": "Ptolemy XI Alexander II",
+            "title": "King",
+            "reignStart": -80,
+            "reignEnd": -80
+        },
+        {
+            "name": "Ptolemy XII Auletes",
+            "title": "King",
+            "reignStart": -80,
+            "reignEnd": -51
+        },
+        {
+            "name": "Berenice IV",
+            "title": "Queen",
+            "reignStart": -58,
+            "reignEnd": -55
+        },
+        {
+            "name": "Cleopatra VII",
+            "title": "Queen",
+            "reignStart": -51,
+            "reignEnd": -30
+        },
+        {
+            "name": "Ptolemy XIII Theos Philopator",
+            "title": "King",
+            "reignStart": -51,
+            "reignEnd": -47
+        },
+        {
+            "name": "Ptolemy XIV Philopator",
+            "title": "King",
+            "reignStart": -47,
+            "reignEnd": -44
+        },
+        {
+            "name": "Caesarion",
+            "title": "King",
+            "reignStart": -44,
+            "reignEnd": -30
+        }
+    ],
+    "legendaryRulers": [],
+    "predecessors": [
+        "Macedonian Empire"
+    ],
+    "successors": [
+        "Roman Empire"
+    ],
+    "territory": "Egypt throughout, with Cyrenaica and Cyprus for most of its history. Under Ptolemy II and III it also held Coele-Syria, much of the southern Anatolian coast and Aegean islands; these were lost to the Seleucids and Rome from the late third century BCE, leaving Egypt and Cyprus by the first century BCE.",
+    "modernCountries": [
+        "Egypt",
+        "Libya",
+        "Cyprus",
+        "Israel",
+        "Palestine",
+        "Lebanon",
+        "Jordan",
+        "Syria",
+        "Turkey",
+        "Greece"
+    ],
+    "languages": [
+        "Koine Greek",
+        "Demotic Egyptian"
+    ],
+    "religions": [
+        "Ancient Egyptian religion",
+        "Greek religion",
+        "Cult of Serapis",
+        "Ptolemaic ruler cult"
+    ],
+    "judgments": {
+        "politicalInfluenceInfo": "One of the three great Hellenistic kingdoms, a rival of the Seleucids and a partner and then client of Rome.",
+        "politicalInfluenceScore": 8,
+        "culturalContributionInfo": "Alexandria's Library and Mouseion made it the intellectual centre of the Greek world; the Rosetta Stone is one of its decrees.",
+        "culturalContributionScore": 9,
+        "scientificAdvancementInfo": "Royal patronage supported Euclid, Eratosthenes, Herophilus and Ctesibius.",
+        "scientificAdvancementScore": 9,
+        "ethicalLegacyInfo": "A Greek elite ruled a largely Egyptian population, with recurring native revolts.",
+        "ethicalLegacyScore": 5,
+        "economicImpactInfo": "Egypt's grain made it the richest Hellenistic state; the crown controlled a monetised, heavily taxed economy.",
+        "economicImpactScore": 8,
+        "militaryImpactInfo": "Fought six Syrian Wars with the Seleucids, winning at Raphia (217 BCE).",
+        "militaryImpactScore": 6,
+        "surpriseOfImpactInfo": "Its last ruler, Cleopatra VII, became one of the most famous figures of antiquity.",
+        "surpriseOfImpactScore": 7,
+        "sources": [
+            "Günther Hölbl, A History of the Ptolemaic Empire (Routledge, 2001)"
+        ]
+    },
+    "significance": "It carried Greek rule, language and learning into Egypt for three centuries and made Alexandria the capital of Hellenistic science and scholarship.",
+    "legacy": "The Library of Alexandria, the Septuagint translation, Euclid's Elements and the decipherment of hieroglyphs through the Rosetta Stone all trace back to the Ptolemaic court.",
+    "shortSummary": "The Macedonian Greek dynasty that ruled Egypt from 305 BCE until Cleopatra VII's death and the Roman annexation in 30 BCE, with its capital at Alexandria.",
+    "longSummary": [
+        "Founded by Ptolemy I Soter, a general of Alexander the Great, who governed Egypt as satrap from 323 BCE, first from Memphis and then from Alexandria, and became king in 305 BCE.",
+        "The early Ptolemies built an empire across the eastern Mediterranean and made Alexandria, with its Library and Mouseion, the leading city of the Greek world.",
+        "From the late third century BCE dynastic conflict, with brothers, sisters and sons reigning jointly and against each other, native revolts and Roman power weakened the kingdom; Rome annexed it in 30 BCE after the defeat of Cleopatra VII and Mark Antony."
+    ]
+}
