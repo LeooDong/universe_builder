@@ -29,6 +29,11 @@ release or otherwise: the history example's tables are written by hand, and
 Run `make release-check` to a file; act on its exit code; read the tail only
 on failure. It runs the suite and flake8. Do not promote on a non-zero exit.
 
+Then have a second agent read `git diff <last tag>..dev` for live data the
+guards cannot see: corpus counts, costs, run dates, subject lists or table
+lines from a pack, retyped or summarised rather than copied. Take out anything
+it finds before promoting; this repo is public.
+
 ## 3. Promote
 
 ```bash
