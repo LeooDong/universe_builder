@@ -29,7 +29,7 @@ def _bounds(metadata) -> tuple[int | None, int | None]:
     """Read numeric floor/ceiling from a field's `annotated_types` constraints.
 
     Judgments scores are `Annotated[int, Field(ge=0, le=10)]` and `Date.year` is
-    `ge=0, le=60000`; the constraints arrive as objects carrying `.ge/.gt/.le/.lt`.
+    `ge=0, le=4_000_000`; the constraints arrive as objects carrying `.ge/.gt/.le/.lt`.
     A plain `1` satisfies every bound in the current corpus, but reading them
     keeps the builder correct if a future field floors above 1.
     """

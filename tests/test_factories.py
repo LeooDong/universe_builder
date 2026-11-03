@@ -69,11 +69,11 @@ def test_city_expanded_union_field_builds_a_population_not_a_string():
 
 
 def test_bounded_ints_land_in_range():
-    """Judgments scores are 0..10 and Date.year is 0..60000; the builder must
+    """Judgments scores are 0..10 and Date.year is 0..4,000,000; the builder must
     pick a value inside the bound, not a blind constant that could fall outside."""
     judgments = minimal_instance(subatomic.Judgments)
     assert 0 <= judgments.politicalInfluenceScore <= 10
-    assert 0 <= (minimal_instance(subatomic.Date).year or 0) <= 60000
+    assert 0 <= (minimal_instance(subatomic.Date).year or 0) <= 4_000_000
 
 
 def test_wire_aliased_model_dumps_on_the_wire_spelling():

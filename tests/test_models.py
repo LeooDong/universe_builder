@@ -85,9 +85,14 @@ class TestDate:
     def test_valid_day_survives(self):
         assert Date(**make_date(day=15)).day == 15
 
+    def test_a_deep_time_bce_year_validates(self):
+        date = Date(**make_date(year=-300_000, era=None))
+        assert (date.year, date.era) == (300_000, "BCE")
+
     def test_year_upper_bound_is_enforced(self):
+        assert Date(**make_date(year=4_000_000, era="BCE")).year == 4_000_000
         with pytest.raises(ValidationError):
-            Date(**make_date(year=60001))
+            Date(**make_date(year=4_000_001, era="BCE"))
 
 
 # ---------------------------------------------------------------------------

@@ -203,7 +203,9 @@ class Name(BaseModel):
 
 
 class Date(BaseModel):
-    year: Optional[int] = Field(None, ge=0, le=60000, description="Best approximation")
+    year: Optional[int] = Field(
+        None, ge=0, le=4_000_000, description="Best approximation; deep-time BCE years allowed"
+    )
     month: Optional[int] = Field(None, ge=1, le=12)
     day: Optional[int] = Field(None, ge=1, le=31)
     era: Optional[Era] = Field(None, description="Common Era or Before Common Era")
