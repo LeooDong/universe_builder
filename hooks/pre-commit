@@ -11,10 +11,12 @@
 #
 # The promotion itself is allowed: `git merge --squash dev` leaves SQUASH_MSG in
 # the git directory, and that file is the difference between promoting work and
-# authoring it here.
+# authoring it here. A conflicted `git merge dev` leaves MERGE_HEAD instead and
+# is refused like any other commit: it would be a merge commit on `main`
+# (hooks/pre-merge-commit refuses the clean one).
 branch=$(git symbolic-ref --short HEAD 2>/dev/null)
 git_dir=$(git rev-parse --git-dir)
-if [ "$branch" = "main" ] && [ ! -f "$git_dir/SQUASH_MSG" ] && [ ! -f "$git_dir/MERGE_HEAD" ]; then
+if [ "$branch" = "main" ] && [ ! -f "$git_dir/SQUASH_MSG" ]; then
 	cat >&2 <<'MSG'
 refusing to commit directly on `main`.
 

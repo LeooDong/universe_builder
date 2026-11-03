@@ -6,7 +6,8 @@ description: Promote the engine from dev to main and, when Leo asks for a releas
 # Release the engine
 
 Keep this file current: change it in the same commit as any change to the
-steps it names (`Makefile` targets, `hooks/pre-commit`, the version source).
+steps it names (`Makefile` targets, `hooks/pre-commit`, `hooks/pre-merge-commit`, the
+version source).
 `tests/test_release_skill.py` checks the paths and targets it names.
 
 Promote only when Leo asks. Tag and push only when Leo asks for a release.
@@ -41,22 +42,30 @@ git checkout main
 git merge --squash dev
 git commit            # "vX.Y.Z: <summary>" for a release; the hook runs flake8
 git checkout dev
-git reset --hard main
+git merge --no-edit main
+git diff --quiet main dev   # must exit 0: the two trees match
 ```
 
-`hooks/pre-commit` (installed by `make hooks`) refuses a commit on `main`
-that is not a squash. Run `make test` on `dev` after the reset.
+Merge `main` back into `dev`; never `git reset --hard main`. The merge
+changes no files, keeps any `dev` commit or uncommitted edit another agent
+made meanwhile, and lets the next `git merge --squash dev` take only the work
+since this promotion. `git log --first-parent dev` hides the doubled history.
+
+`hooks/pre-commit` and `hooks/pre-merge-commit` (installed by `make hooks`)
+refuse a commit on `main` that is not a squash. Run `make test` on `dev` after
+the merge.
 
 ## 4. Tag and push (a release only)
 
 ```bash
-git tag vX.Y.Z main
+git tag -a vX.Y.Z -m "vX.Y.Z" main
 git push origin main vX.Y.Z
 git push origin dev
 ```
 
-If `git push origin dev` is refused because `dev` was pushed before the
-reset, ask Leo before `--force-with-lease`.
+Never force-push either branch, and never move or delete a pushed tag: a pack
+installs whatever `@vX.Y.Z` points at. A refused `dev` push means someone else
+pushed: `git fetch origin`, `git merge origin/dev`, push again.
 
 ## 5. Tell downstream packs
 
