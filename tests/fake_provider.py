@@ -81,7 +81,7 @@ class FakeProvider(Provider):
     def poll_batch(self, handle: BatchHandle) -> BatchStatus:
         return BatchStatus(done=True, state="completed", succeeded=handle.request_count)
 
-    def fetch_batch_results(self, handle: BatchHandle) -> Iterator[LLMResponse]:
+    def fetch_batch_results(self, handle: BatchHandle, schema_model=None) -> Iterator[LLMResponse]:
         index = int(handle.batch_id.rsplit("-", 1)[1]) - 1
         for request in self.batches[index]:
             reply = self.batch_replies.get(request.custom_id)

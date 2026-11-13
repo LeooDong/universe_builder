@@ -454,10 +454,10 @@ class OpenAIProvider(Provider):
             if line.strip():
                 yield json.loads(line)
 
-    def fetch_batch_results(self, handle: BatchHandle) -> Iterator[LLMResponse]:
+    def fetch_batch_results(self, handle: BatchHandle, schema_model=None) -> Iterator[LLMResponse]:
         from universe_builder.providers.registry import schema_model_by_name
 
-        schema_model = schema_model_by_name(handle.extra.get("schema_model"))
+        schema_model = schema_model or schema_model_by_name(handle.extra.get("schema_model"))
         # Before a single result is read: a schema that moved while the batch was
         # in flight makes every validation below meaningless.
         require_matching_schema(handle, schema_model)
@@ -523,7 +523,7 @@ class _NoBatchMixin:
     def poll_batch(self, handle):
         raise BatchNotSupported(f"{self.name} has no batch job API")
 
-    def fetch_batch_results(self, handle):
+    def fetch_batch_results(self, handle, schema_model=None):
         raise BatchNotSupported(f"{self.name} has no batch job API")
 
     def cancel_batch(self, handle):

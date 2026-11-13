@@ -439,10 +439,10 @@ class AnthropicProvider(Provider):
         message = getattr(inner, "message", None)
         return f"batch {kind}: {etype}" + (f": {message}" if message else "")
 
-    def fetch_batch_results(self, handle: BatchHandle) -> Iterator[LLMResponse]:
+    def fetch_batch_results(self, handle: BatchHandle, schema_model=None) -> Iterator[LLMResponse]:
         from universe_builder.providers.registry import schema_model_by_name
 
-        schema_model = schema_model_by_name(handle.extra.get("schema_model"))
+        schema_model = schema_model or schema_model_by_name(handle.extra.get("schema_model"))
         # Before a single result is read: a schema that moved while the batch was
         # in flight makes every validation below meaningless.
         require_matching_schema(handle, schema_model)

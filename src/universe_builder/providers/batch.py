@@ -458,6 +458,14 @@ def collect(path: Path | str) -> CollectReport:
     handle = load(path)
     report = CollectReport()
     expected = set(expected_custom_ids(handle))
+    if handle.extra.get("kind") == "requests":
+        # A request batch (`batch_requests`, v0.8.0): its answers are a
+        # caller's judgements, and routing them here would write them as atoms.
+        report.refused = (f"{Path(path).name} is a request batch; its caller collects it "
+                          "(providers.batch_requests.run_many(..., resume=...))")
+        log.error("Refusing to collect %s: %s", handle.batch_id, report.refused)
+        report.missing = sorted(expected)
+        return report
     seen: set[str] = set()
     # expand fans out: many period-requests share one target city, and the city
     # is written once, spliced, after the loop. Accumulate here keyed by target.

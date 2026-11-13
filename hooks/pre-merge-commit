@@ -1,0 +1,20 @@
+#!/bin/sh
+# Refuse a merge commit on `main`.
+#
+# `main` takes one squash-merged pull request per promotion (see
+# hooks/pre-commit). A clean `git merge` on `main` creates its commit without
+# running pre-commit, so this hook is what stops it locally; GitHub's branch
+# protection would only refuse it at push time. A fast-forward makes no commit
+# and runs no hook, which is how local `main` follows `origin/main`.
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+if [ "$branch" = "main" ]; then
+	cat >&2 <<'MSG'
+refusing a merge commit on `main`; it only follows `origin/main`.
+
+  git merge --abort
+  git checkout dev     # promote through a pull request: .claude/skills/release/SKILL.md
+
+Override for a genuine exception with: git merge --no-verify
+MSG
+	exit 1
+fi

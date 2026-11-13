@@ -1,33 +1,28 @@
 #!/bin/sh
 # Two guards, in the order that fails cheapest first.
 
-# 1. Refuse a commit made directly on `main`.
+# 1. Refuse any commit on `main`.
 #
-# `main` is the release history: one squashed commit per promotion from `dev`.
-# A commit authored here is how the two branches silently diverge -- `main` runs
-# ahead, `dev` goes stale, and the next branch cut from `dev` (a Codex worktree,
-# say) starts from history missing the newest work. That happened, which is why
-# this exists.
-#
-# The promotion itself is allowed: `git merge --squash dev` leaves SQUASH_MSG in
-# the git directory, and that file is the difference between promoting work and
-# authoring it here.
+# `main` is the release history: one squashed commit per promotion from `dev`,
+# made by GitHub when it merges the promotion's pull request (its branch
+# protection refuses a push to `main`). Local `main` only follows `origin/main`.
+# A commit authored here could not be pushed, and is how the two branches
+# silently diverge -- `main` runs ahead, `dev` goes stale, and the next branch
+# cut from `dev` starts from history missing the newest work. That happened,
+# which is why this exists. hooks/pre-merge-commit refuses the merge commits
+# that never reach this hook.
 branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-git_dir=$(git rev-parse --git-dir)
-if [ "$branch" = "main" ] && [ ! -f "$git_dir/SQUASH_MSG" ] && [ ! -f "$git_dir/MERGE_HEAD" ]; then
+if [ "$branch" = "main" ]; then
 	cat >&2 <<'MSG'
-refusing to commit directly on `main`.
+refusing to commit on `main`; it only follows `origin/main`.
 
-Work belongs on `dev`; `main` takes one squashed commit per promotion.
+Work belongs on `dev`; `main` takes one squash-merged pull request per
+promotion (see .claude/skills/release/SKILL.md).
 
   git stash            # if you have uncommitted work here
   git checkout dev
   git stash pop
   git commit
-
-To promote instead:
-
-  git checkout main && git merge --squash dev && git commit
 
 Override for a genuine exception with: git commit --no-verify
 MSG
