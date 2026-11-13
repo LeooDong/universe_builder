@@ -1047,7 +1047,7 @@ class NullJournal:
 _current: Any = NullJournal()
 
 
-def usage_fields(usage, model: Optional[str] = None) -> dict:
+def usage_fields(usage, model: Optional[str] = None, *, batch: bool = False) -> dict:
     """Token counts for `record_attempt`, plus `estimated_cost` when `model` is
     named, or nothing at all.
 
@@ -1067,6 +1067,9 @@ def usage_fields(usage, model: Optional[str] = None) -> dict:
     Every model call a domain operation makes should spread this into its
     `record_attempt` (`**journal.usage_fields(response.usage, model)`); the
     history pack's `periods --split` once did not and was unpriceable.
+
+    `batch` prices at the provider's batch rate (v0.8.0), for a result that
+    came back through a batch.
     """
     if usage is None:
         return {}
@@ -1080,7 +1083,7 @@ def usage_fields(usage, model: Optional[str] = None) -> dict:
     if model:
         from universe_builder.providers import pricing
 
-        cost = pricing.estimate_cost(usage, model)
+        cost = pricing.estimate_cost(usage, model, batch=batch)
         if cost is not None:
             fields["estimated_cost"] = cost
     return fields
@@ -1109,7 +1112,8 @@ def _sent_task_budget(request) -> Optional[int]:
 def record_call(request, response=None, *, operation: str, atom_type: str, subject: str,
                 error: Optional[str] = None, work_item: Optional[str] = None,
                 target_pointer=None, schema_id: Optional[str] = None,
-                replaces=None) -> None:
+                replaces=None, batch_id: Optional[str] = None,
+                provider: Optional[str] = None) -> None:
     """Journal one direct `providers.run.complete` call made outside an operation.
 
     For the core verbs that call a model themselves rather than through
@@ -1128,6 +1132,10 @@ def record_call(request, response=None, *, operation: str, atom_type: str, subje
     `replaces` (v0.3.2): the file the answer is about to be written over, as
     `Journal.record_attempt` takes it — pass it only when the answer is good
     and will be written, so the bytes it replaces are kept for `restore`.
+
+    `batch_id` (v0.8.0): the answer came back through that batch
+    (`providers.batch_requests`); the line is marked `execution_mode` batch,
+    names the batch and `provider`, and is priced at the batch rate.
 
     Swallows its own failures, like the two recording points in the passes:
     journalling is observation, and a failed observation must not cost the
@@ -1163,7 +1171,9 @@ def record_call(request, response=None, *, operation: str, atom_type: str, subje
             target_pointer=str(target_pointer) if target_pointer is not None else None,
             schema_id=schema_id,
             replaces=replaces,
-            **usage_fields(getattr(response, "usage", None), model),
+            **({"execution_mode": "batch", "batch_id": batch_id, "provider": provider}
+               if batch_id else {}),
+            **usage_fields(getattr(response, "usage", None), model, batch=bool(batch_id)),
         )
     except Exception as e:  # noqa: BLE001
         log.warning("Could not journal %s call for %r: %s", operation, subject, e)

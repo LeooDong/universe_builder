@@ -107,6 +107,8 @@ Part of [ARCHITECTURE.md](../../ARCHITECTURE.md); the index there lists every pa
   once every submitted request is accounted for, which is what stops a later
   `collect --all` re-fetching an old batch and overwriting atoms that have been
   corrected since. Anything incomplete keeps its handle in place.
+  Request batches (`providers.batch_requests`, v0.8.0) keep theirs in
+  `_batches/requests/`, which `collect --all` never reads.
   `run_batch cancel NAME|--all [--apply]` (v0.6.2) asks the provider to stop a
   batch still running (`Provider.cancel_batch`; OpenAI, Anthropic and Google, the
   no-batch transports refuse). Without `--apply` it only lists what is running,

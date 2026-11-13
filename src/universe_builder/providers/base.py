@@ -81,7 +81,11 @@ class Provider(ABC):
     def poll_batch(self, handle: BatchHandle) -> BatchStatus:
         raise BatchNotSupported(f"{self.name} has no batch API")
 
-    def fetch_batch_results(self, handle: BatchHandle) -> Iterator[LLMResponse]:
+    def fetch_batch_results(self, handle: BatchHandle, schema_model=None) -> Iterator[LLMResponse]:
+        """Each result, validated against `schema_model`: by default the class
+        the handle's pinned `schema_model` names in the pack's registry; a
+        caller holding the requests (`batch_requests`, v0.8.0) passes their own,
+        which a pack's judge schema needs. The pin is checked either way."""
         raise BatchNotSupported(f"{self.name} has no batch API")
 
     def cancel_batch(self, handle: BatchHandle) -> BatchStatus:

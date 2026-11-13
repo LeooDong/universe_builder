@@ -132,6 +132,13 @@ def collected_dir() -> Path:
     return batch_dir() / "collected"
 
 
+def request_batch_dir() -> Path:
+    """Handles of request batches (`providers.batch_requests`, v0.8.0): judge
+    calls whose answers go to a caller, never to an atom file. A subdirectory,
+    so `collect --all` cannot route them through the atom writer."""
+    return batch_dir() / "requests"
+
+
 def index_dir() -> Path:
     """Derived cross-reference indexes (`universe_builder index`). Underscore-prefixed:
     machinery, never atoms, always recomputable from the corpus."""

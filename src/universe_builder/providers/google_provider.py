@@ -170,10 +170,10 @@ class GoogleProvider(Provider):
         self._client.batches.cancel(name=handle.batch_id)
         return self.poll_batch(handle)
 
-    def fetch_batch_results(self, handle: BatchHandle) -> Iterator[LLMResponse]:
+    def fetch_batch_results(self, handle: BatchHandle, schema_model=None) -> Iterator[LLMResponse]:
         from universe_builder.providers.registry import schema_model_by_name
 
-        schema_model = schema_model_by_name(handle.extra.get("schema_model"))
+        schema_model = schema_model or schema_model_by_name(handle.extra.get("schema_model"))
         # Before a single result is read, as the other two providers do. A
         # handle from before the pin carries no sha and is let through with a
         # warning (`BatchHandle.schema_mismatch`).
