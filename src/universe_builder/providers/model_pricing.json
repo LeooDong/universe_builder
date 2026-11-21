@@ -1,5 +1,5 @@
 {
-  "_comment": "USD per 1M tokens, from each provider's published price list. gpt-4.1 and gpt-4.1-mini are here for the search transport (they support web_search; gpt-5-nano does not). Anthropic rows checked against platform.claude.com/docs/en/about-claude/pricing, ids and max_output against the live Models API: cache_write is the 1-hour TTL price (2x input; the engine caches with ttl=1h), cached_input is 0.1x input except Opus 5.5 / Sonnet 5.5 (0.05x) and Fable 5.1 (0.025x); Sonnet 5 is $2/$10 (the introductory price became standard); Haiku 5.5 is the rate for prompts up to 100,000 tokens ($0.50/$2.50 above). cache_min_tokens for Sonnet 5.5 and Haiku 5.5 is unpublished and set to 1024 provisionally (Haiku 5.5 has cached a longer prefix live). Prices and model IDs change often - re-verify before relying on cost estimates. cache_min_tokens is the shortest prefix that will cache; shorter prefixes silently do not cache. DeepSeek rates are OFF-PEAK; peak (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) is roughly double.",
+  "_comment": "USD per 1M tokens, from each provider's published price list. gpt-4.1 and gpt-4.1-mini are here for the search transport (they support web_search; gpt-5-nano does not). Anthropic rows checked against platform.claude.com/docs/en/about-claude/pricing, ids and max_output against the live Models API: cache_write is the 1-hour TTL price (2x input; the engine caches with ttl=1h), cached_input is 0.1x input except Opus 5.5 / Sonnet 5.5 (0.05x) and Fable 5.1 (0.025x); Sonnet 5 is $2/$10 (the introductory price became standard); Haiku 5.5 is the rate for prompts up to 100,000 tokens ($0.50/$2.50 above). cache_min_tokens for Sonnet 5.5 and Haiku 5.5 is unpublished and set to 1024 provisionally (Haiku 5.5 has cached a longer prefix live). Prices and model IDs change often - re-verify before relying on cost estimates. cache_min_tokens is the shortest prefix that will cache; shorter prefixes silently do not cache. gpt-6.2-sol is at Standard rates, checked against developers.openai.com/api/docs/pricing on 2026-11-21: its 50% promotion (to 2027-02-28) is on the Ultrafast tier only, which the engine does not use; record a time-limited price here only for a tier the engine calls, with its end date. DeepSeek rates are OFF-PEAK; peak (01:00-04:00 and 06:00-10:00 UTC, Mon-Fri) is roughly double.",
   "_schema": {
     "input": "standard input price",
     "cached_input": "price for a prefix served from cache",
@@ -170,6 +170,16 @@
       "batch_discount": 0.5,
       "cache_min_tokens": 1024,
       "context": 400000
+    },
+    "gpt-6.2-sol": {
+      "provider": "openai",
+      "input": 2.0,
+      "cached_input": 0.1,
+      "cache_write": null,
+      "output": 10.0,
+      "batch_discount": 0.5,
+      "cache_min_tokens": 1024,
+      "context": 1050000
     },
     "gpt-6-astra": {
       "provider": "openai",
