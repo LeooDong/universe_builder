@@ -4,13 +4,20 @@ The pricing table lives in `model_pricing.json` next to this module and is loade
 through `universe_builder.settings`, so it resolves regardless of the working
 directory. Prices go stale; treat estimates as indicative and re-check the table
 before making a decision based on it.
+
+Rows can be added or replaced without an engine release (v0.9.0): the active
+pack's `model_pricing_path`, then the file `UNIVERSE_BUILDER_MODEL_PRICING`
+names, each in the same shape, are laid over the engine's rows, the later
+winning. A model priced there is callable everywhere a model id is taken.
 """
 
 from __future__ import annotations
 
 import json
 import logging
+import os
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Optional
 
 from universe_builder import settings
@@ -49,26 +56,75 @@ class ModelInfo:
     task_budget: Optional[bool] = None
 
 
-def _load() -> dict[str, ModelInfo]:
-    with open(settings.MODEL_PRICING, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return {
-        name: ModelInfo(model=name, **spec)
-        for name, spec in data["models"].items()
-    }
+#: Names a pricing file laid over the engine's rows and the pack's.
+PRICING_ENV = "UNIVERSE_BUILDER_MODEL_PRICING"
 
 
-_MODELS: dict[str, ModelInfo] = _load()
+def _load(path: Path) -> dict[str, ModelInfo]:
+    """The rows of one pricing file. A malformed file or row raises ValueError
+    naming the file: a declared table that cannot be read stops the run rather
+    than silently pricing nothing."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        raise ValueError(f"pricing file {path} cannot be read: {e}") from e
+    models = data.get("models") if isinstance(data, dict) else None
+    if not isinstance(models, dict):
+        raise ValueError(f"pricing file {path} has no \"models\" object")
+    rows = {}
+    for name, spec in models.items():
+        try:
+            rows[name] = ModelInfo(model=name, **spec)
+        except TypeError as e:
+            raise ValueError(f"pricing file {path}, model {name!r}: {e}") from e
+    return rows
+
+
+#: The engine's own rows. Tests patch entries here; `_table` reads it on every
+#: lookup, so a patch shows through the layered table too.
+_MODELS: dict[str, ModelInfo] = _load(settings.MODEL_PRICING)
+_LAYERS: dict[tuple, dict[str, ModelInfo]] = {}
+
+
+def extra_pricing_paths() -> list[Path]:
+    """The pricing files laid over the engine's rows, lowest first: the active
+    pack's `model_pricing_path`, then `UNIVERSE_BUILDER_MODEL_PRICING`. Read at
+    use time, so a pack switch or an env change applies."""
+    from universe_builder.registry import active_pack
+
+    paths = []
+    pack_path = getattr(active_pack(), "model_pricing_path", None)
+    if pack_path:
+        paths.append(Path(pack_path))
+    env_path = os.environ.get(PRICING_ENV)
+    if env_path:
+        paths.append(Path(env_path))
+    return paths
+
+
+def _table() -> dict[str, ModelInfo]:
+    paths = tuple(extra_pricing_paths())
+    if not paths:
+        return _MODELS
+    if paths not in _LAYERS:
+        layered: dict[str, ModelInfo] = {}
+        for path in paths:
+            layered.update(_load(path))
+        _LAYERS[paths] = layered
+    return {**_MODELS, **_LAYERS[paths]}
 
 
 def lookup(model: str) -> ModelInfo:
     """Registry entry for a model ID."""
+    table = _table()
     try:
-        return _MODELS[model]
+        return table[model]
     except KeyError as e:
         raise UnknownModel(
-            f"{model!r} is not in the pricing table. "
-            f"Add it to {settings.MODEL_PRICING.name} or pick one of: {', '.join(sorted(_MODELS))}"
+            f"{model!r} is not in the pricing table. Add it to the pack's "
+            f"model_pricing_path or {PRICING_ENV} (no engine release needed), or to "
+            f"{settings.MODEL_PRICING.name}; or pick one of: {', '.join(sorted(table))}"
         ) from e
 
 
@@ -80,6 +136,13 @@ def provider_for(model: str) -> str:
 
 
 def known_models() -> list[str]:
+    """Every priced model: the engine's rows and any the pack or env adds."""
+    return sorted(_table())
+
+
+def engine_models() -> list[str]:
+    """The engine's own rows only. For import-time callers (`config`), which
+    run before a pack may have registered."""
     return sorted(_MODELS)
 
 
