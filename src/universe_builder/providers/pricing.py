@@ -74,16 +74,78 @@ def _load(path: Path) -> dict[str, ModelInfo]:
         raise ValueError(f"pricing file {path} has no \"models\" object")
     rows = {}
     for name, spec in models.items():
+        if not isinstance(spec, dict):
+            raise ValueError(f"pricing file {path}, model {name!r}: a row is an object")
         try:
-            rows[name] = ModelInfo(model=name, **spec)
+            info = ModelInfo(model=name, **spec)
         except TypeError as e:
             raise ValueError(f"pricing file {path}, model {name!r}: {e}") from e
+        problem = _row_problem(info)
+        if problem:
+            raise ValueError(f"pricing file {path}, model {name!r}: {problem}")
+        rows[name] = info
+    return rows
+
+
+def _is_number(value) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def _is_count(value) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _row_problem(info: ModelInfo) -> Optional[str]:
+    """What is wrong with one row's values, or None. A price as a string or a
+    negative number would otherwise surface as a wrong cost or a TypeError
+    deep in a run."""
+    if not isinstance(info.provider, str) or not info.provider:
+        return "provider must be a non-empty string"
+    for field in ("input", "cached_input", "output"):
+        value = getattr(info, field)
+        if not _is_number(value) or value < 0:
+            return f"{field} must be a non-negative number, not {value!r}"
+    if info.cache_write is not None and (not _is_number(info.cache_write) or info.cache_write < 0):
+        return f"cache_write must be null or a non-negative number, not {info.cache_write!r}"
+    if not _is_number(info.batch_discount) or not 0 < info.batch_discount <= 1:
+        return f"batch_discount must be a number in (0, 1], not {info.batch_discount!r}"
+    if not _is_count(info.cache_min_tokens) or info.cache_min_tokens < 0:
+        return f"cache_min_tokens must be a non-negative integer, not {info.cache_min_tokens!r}"
+    if not _is_count(info.context) or info.context <= 0:
+        return f"context must be a positive integer, not {info.context!r}"
+    if info.max_output is not None and (not _is_count(info.max_output) or info.max_output <= 0):
+        return f"max_output must be null or a positive integer, not {info.max_output!r}"
+    for field in ("effort", "task_budget"):
+        value = getattr(info, field)
+        if value is not None and not isinstance(value, bool):
+            return f"{field} must be null or true/false, not {value!r}"
+    levels = info.effort_levels
+    if levels is not None and (not isinstance(levels, (list, tuple))
+                               or not all(isinstance(level, str) for level in levels)):
+        return f"effort_levels must be null or a list of strings, not {levels!r}"
+    return None
+
+
+def _load_layer(path: Path) -> dict[str, ModelInfo]:
+    """One layered file's rows, checked also for a provider the engine has a
+    factory for (the engine's own table is checked by its tests; importing the
+    factory registry while this module loads would be circular)."""
+    from universe_builder.providers.registry import provider_names
+
+    rows = _load(path)
+    known = provider_names()
+    for name, info in rows.items():
+        if info.provider not in known:
+            raise ValueError(f"pricing file {path}, model {name!r}: provider {info.provider!r} "
+                             f"is not one of {', '.join(known)}")
     return rows
 
 
 #: The engine's own rows. Tests patch entries here; `_table` reads it on every
 #: lookup, so a patch shows through the layered table too.
 _MODELS: dict[str, ModelInfo] = _load(settings.MODEL_PRICING)
+#: The layered rows, keyed by each file's path, mtime and size: an edited or
+#: replaced file is read again. Holds the last key only.
 _LAYERS: dict[tuple, dict[str, ModelInfo]] = {}
 
 
@@ -103,16 +165,29 @@ def extra_pricing_paths() -> list[Path]:
     return paths
 
 
+def _layer_key(paths: list[Path]) -> tuple:
+    key = []
+    for path in paths:
+        try:
+            stat = path.stat()
+        except OSError as e:
+            raise ValueError(f"pricing file {path} cannot be read: {e}") from e
+        key.append((str(path), stat.st_mtime_ns, stat.st_size))
+    return tuple(key)
+
+
 def _table() -> dict[str, ModelInfo]:
-    paths = tuple(extra_pricing_paths())
+    paths = extra_pricing_paths()
     if not paths:
         return _MODELS
-    if paths not in _LAYERS:
+    key = _layer_key(paths)
+    if key not in _LAYERS:
         layered: dict[str, ModelInfo] = {}
         for path in paths:
-            layered.update(_load(path))
-        _LAYERS[paths] = layered
-    return {**_MODELS, **_LAYERS[paths]}
+            layered.update(_load_layer(path))
+        _LAYERS.clear()
+        _LAYERS[key] = layered
+    return {**_MODELS, **_LAYERS[key]}
 
 
 def lookup(model: str) -> ModelInfo:

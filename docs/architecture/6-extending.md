@@ -101,7 +101,9 @@ a phase at it) are two different things:
    - the file `UNIVERSE_BUILDER_MODEL_PRICING` names: one checkout, no commit.
 
    Each is `{"models": {id: row}}` with the engine table's row fields. A declared
-   file that is missing or malformed raises `ValueError` on the next lookup.
+   file that is missing or malformed, or a row with a wrong-typed or out-of-range
+   value or a provider with no factory, raises `ValueError` on the next lookup. An
+   edited file is read again (the cache keys on its mtime and size).
    Move a pack's row into the engine table once it is checked, then drop it from
    the pack.
 

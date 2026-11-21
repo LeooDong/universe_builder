@@ -5,6 +5,7 @@ engine release."""
 from __future__ import annotations
 
 import json
+import os
 
 import pytest
 
@@ -89,6 +90,20 @@ def test_the_pack_file_is_read_and_the_env_file_wins_over_it(tmp_path, monkeypat
     ('{"rows": {}}', 'no "models" object'),
     (json.dumps({"models": {NEW: _row(price=1)}}), NEW),
     (json.dumps({"models": {NEW: {"provider": "openai"}}}), NEW),
+    (json.dumps({"models": {NEW: "2.0"}}), "a row is an object"),
+    (json.dumps({"models": {NEW: _row(input="2.0")}}), "input must be a non-negative number"),
+    (json.dumps({"models": {NEW: _row(output=-1)}}), "output must be a non-negative number"),
+    (json.dumps({"models": {NEW: _row(cached_input=True)}}), "cached_input must be"),
+    (json.dumps({"models": {NEW: _row(cache_write="1")}}), "cache_write must be"),
+    (json.dumps({"models": {NEW: _row(batch_discount=0)}}), "batch_discount must be"),
+    (json.dumps({"models": {NEW: _row(batch_discount=1.5)}}), "batch_discount must be"),
+    (json.dumps({"models": {NEW: _row(context=0)}}), "context must be"),
+    (json.dumps({"models": {NEW: _row(cache_min_tokens=1024.5)}}), "cache_min_tokens must be"),
+    (json.dumps({"models": {NEW: _row(max_output="128000")}}), "max_output must be"),
+    (json.dumps({"models": {NEW: _row(effort="no")}}), "effort must be"),
+    (json.dumps({"models": {NEW: _row(effort_levels="high")}}), "effort_levels must be"),
+    (json.dumps({"models": {NEW: _row(provider="")}}), "provider must be"),
+    (json.dumps({"models": {NEW: _row(provider="opneai")}}), "provider 'opneai' is not one of"),
 ])
 def test_a_declared_file_that_cannot_be_read_stops_the_lookup(tmp_path, monkeypatch, content, match):
     path = tmp_path / "p.json"
@@ -98,3 +113,26 @@ def test_a_declared_file_that_cannot_be_read_stops_the_lookup(tmp_path, monkeypa
     with pytest.raises(ValueError, match=match) as err:
         pricing.lookup(ENGINE)
     assert str(path) in str(err.value)
+
+
+def test_an_edited_file_is_read_again(tmp_path, monkeypatch):
+    path = _write(tmp_path / "p.json", {NEW: _row(input=3.0)})
+    monkeypatch.setenv(pricing.PRICING_ENV, str(path))
+    assert pricing.lookup(NEW).input == 3.0
+
+    before = path.stat().st_mtime_ns
+    _write(path, {NEW: _row(input=7.0)})          # same size: only the mtime moves
+    os.utime(path, ns=(before + 1_000_000_000, before + 1_000_000_000))
+    assert pricing.lookup(NEW).input == 7.0
+
+    _write(path, {})
+    with pytest.raises(UnknownModel):
+        pricing.lookup(NEW)
+
+    path.unlink()
+    with pytest.raises(ValueError, match="cannot be read"):
+        pricing.lookup(NEW)
+
+
+def test_the_engine_table_passes_the_row_checks():
+    assert pricing._load(pricing.settings.MODEL_PRICING) == pricing._MODELS
