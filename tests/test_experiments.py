@@ -636,7 +636,7 @@ class TestModelAB:
         dear.write_text(base.replace("  create: balanced", "  create: strong"), encoding="utf-8")
         assert cli.main(["experiment", "replay", "m-dear", "--atom", "city", "--per-type", "4", "--config",
                          str(dear), "--model-b", HAIKU, "--allow-dear-b"]) == 2
-        assert "A city: gpt-6.1-sol outputs" in caplog.text
+        assert "A city: gpt-6.2-sol outputs" in caplog.text
 
     def test_a_level_the_b_provider_lacks_is_refused(self, corpus, caplog):
         assert cli.main(["experiment", "replay", "m-max", "--atom", "city", "--per-type", "4",
@@ -903,8 +903,8 @@ class TestModelABFairness:
     def test_a_judge_tier_resolves_against_config(self, tmp_path):
         base = (settings.PACKAGE_DIR / "pipeline.yaml").read_text(encoding="utf-8")
         other = tmp_path / "pipeline.yaml"
-        other.write_text(base.replace("    strong: gpt-6.1-sol", "    strong: gpt-6-astra", 1), encoding="utf-8")
-        assert cli._judge_arg("strong@low") == "gpt-6.1-sol@low"
+        other.write_text(base.replace("    strong: gpt-6.2-sol", "    strong: gpt-6-astra", 1), encoding="utf-8")
+        assert cli._judge_arg("strong@low") == "gpt-6.2-sol@low"
         assert cli._judge_arg("strong@low", pipeline.load(other)) == "gpt-6-astra@low"
 
     def test_arm_b_flags_need_an_experiment(self, workspace, caplog):
