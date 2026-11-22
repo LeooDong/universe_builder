@@ -80,8 +80,8 @@ SOURCE_TASK_BUDGET_UNSET = "unset: none sent"
 #: Three tiers rather than five. Every extra tier is a judgement call someone has
 #: to make per vendor, and vendors genuinely ship roughly three useful sizes.
 TIER_FRONTIER = "frontier"
-#: Between frontier and balanced (v0.1.18): OpenAI's gpt-6.1-sol is a fifth of
-#: gpt-6-astra's price and about eight times gpt-5.6-luna's. Vendors with
+#: Between frontier and balanced (v0.1.18): OpenAI's Sol model (gpt-6.2-sol) is
+#: a fifth of gpt-6-astra's price and twenty times gpt-6-luna's. Vendors with
 #: nothing in that gap map it to their frontier model, never below balanced.
 TIER_STRONG = "strong"
 TIER_BALANCED = "balanced"
