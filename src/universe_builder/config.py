@@ -97,18 +97,48 @@ def _tier_models() -> tuple:
     command line (`--model claude-haiku-5-5`) or pinned in a phase passes
     through untouched, which until v0.5.9 held only for tier models; any other
     priced id raised KeyError in the synchronous passes."""
-    from universe_builder.providers.pricing import known_models
+    from universe_builder.providers.pricing import engine_models
 
     models = set(_EXTRA_MODELS)
     for table in _pipeline.tiers.values():
         models.update(table.values())
-    models.update(known_models())
+    models.update(engine_models())
     return tuple(sorted(models))
 
 
 PROVIDER_MODELS = _tier_models()
 
-llm_call_mapping = {"llama3": OllamaCall}
+
+class _CallMapping(dict):
+    """`llm_call_mapping`: the models known at import, plus, at call time, any
+    model the active pack or `UNIVERSE_BUILDER_MODEL_PRICING` prices (v0.9.0).
+    Those rows are read when a call is made, not here, because this module is
+    imported while a pack is still registering."""
+
+    def __missing__(self, key):
+        from universe_builder.providers.errors import UnknownModel
+        from universe_builder.providers.pricing import lookup
+
+        model, kind = key if isinstance(key, tuple) else (key, None)
+        if kind not in (None, "augment") or not isinstance(model, str):
+            raise KeyError(key)
+        try:
+            lookup(model)
+        except UnknownModel:
+            raise KeyError(key) from None
+        return ProviderCallAugment if kind == "augment" else ProviderCall
+
+    def __contains__(self, key):
+        if dict.__contains__(self, key):
+            return True
+        try:
+            self.__missing__(key)
+        except KeyError:
+            return False
+        return True
+
+
+llm_call_mapping = _CallMapping({"llama3": OllamaCall})
 for _model in PROVIDER_MODELS:
     llm_call_mapping[_model] = ProviderCall
     llm_call_mapping[(_model, "augment")] = ProviderCallAugment

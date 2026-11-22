@@ -412,3 +412,13 @@ def fake_call_factory(monkeypatch):
         return _Fake
 
     return factory
+
+
+@pytest.fixture(autouse=True)
+def engine_pricing_only(monkeypatch):
+    """Price from the engine's table alone: a `UNIVERSE_BUILDER_MODEL_PRICING`
+    in a developer's `.env` would otherwise reprice or add models under every
+    test. A test that wants a layered file sets the variable itself."""
+    from universe_builder.providers.pricing import PRICING_ENV
+
+    monkeypatch.delenv(PRICING_ENV, raising=False)

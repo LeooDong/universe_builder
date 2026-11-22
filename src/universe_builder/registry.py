@@ -155,6 +155,12 @@ class DomainPack:
     #: to produce `History` atoms for). None = the phase has no bundled seed and a
     #: caller must supply subjects (e.g. `--list`).
     index_seed_path: Optional[Path] = None
+    #: Pricing rows laid over the engine's `providers/model_pricing.json`, same
+    #: shape (v0.9.0): a new model, or a corrected price, without waiting for an
+    #: engine release. `UNIVERSE_BUILDER_MODEL_PRICING` is laid over this in turn.
+    #: None = the engine's rows only; a declared file that is missing or
+    #: malformed stops any lookup.
+    model_pricing_path: Optional[Path] = None
 
     #: Wire *paths* containing names of other atoms: source -> path -> target.
     #:

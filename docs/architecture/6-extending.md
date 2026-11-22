@@ -72,11 +72,13 @@ core is `name_key` (`collisions._fold` is gone).
 **A new model.** Registering a model (making it callable) and selecting it (pointing
 a phase at it) are two different things:
 
-1. **To register it**, give it a row in `providers/model_pricing.json` (step 3).
+1. **To register it**, give it a pricing row (step 3).
    The hosted-model keys in `llm_call_mapping` derive from the tier tables, every
    priced model, and the small `_EXTRA_MODELS` list in `config.py`
    (`config.py::_tier_models` → `PROVIDER_MODELS`); the only entry outside that is
-   `llama3`, hardcoded to `OllamaCall` for the local server. Until v0.5.9 only tier
+   `llama3`, hardcoded to `OllamaCall` for the local server. A model priced only by
+   a pack or `UNIVERSE_BUILDER_MODEL_PRICING` resolves when the call is made
+   (`config._CallMapping`), because `config` is imported while a pack registers. Until v0.5.9 only tier
    models were registered, so `--model claude-haiku-5-5` (priced, in no tier) raised
    `KeyError` in every synchronous pass while the batch path, which never reads
    `llm_call_mapping`, ran it. (`_EXTRA_MODELS` exists only for a model the stored
@@ -87,10 +89,23 @@ a phase at it) are two different things:
    escape hatch for pinning one phase to an exact model. But naming a model in those
    places is *selection, not registration*: it still has to be priced (or tiered,
    or in `_EXTRA_MODELS`) to have an `llm_call_mapping` entry.
-3. Add a matching pricing row to `providers/model_pricing.json`. Required, not
-   optional: `pipeline.yaml` states "every model named in `tiers` must have a row",
-   and `test_config.py` fails a model registered in `llm_call_mapping` with no
-   pricing entry.
+3. Add a matching pricing row. Required, not optional: `pipeline.yaml` states
+   "every model named in `tiers` must have a row", and `test_config.py` fails a
+   model registered in `llm_call_mapping` with no pricing entry. The row goes in
+   one of three files, laid over each other in this order, the later winning
+   (`pricing.extra_pricing_paths`, v0.9.0):
+   - the engine's `providers/model_pricing.json`: for every pack, at the next
+     engine release;
+   - the pack's `DomainPack.model_pricing_path`: a pack prices a new model, or
+     corrects a stale price, without waiting for an engine release;
+   - the file `UNIVERSE_BUILDER_MODEL_PRICING` names: one checkout, no commit.
+
+   Each is `{"models": {id: row}}` with the engine table's row fields. A declared
+   file that is missing or malformed, or a row with a wrong-typed or out-of-range
+   value or a provider with no factory, raises `ValueError` on the next lookup. An
+   edited file is read again (the cache keys on its mtime and size).
+   Move a pack's row into the engine table once it is checked, then drop it from
+   the pack.
 
 There is no hand-maintained model→class table and no `LLMCall` subclass to write; if
 the model's vendor is already registered, those steps are all.
@@ -105,8 +120,8 @@ the model's vendor is already registered, those steps are all.
    routing: `pricing.provider_for(model)` reads it to pick the factory (the sole
    exception is a `vendor/model` OpenRouter slug, which routes to `openrouter` by
    shape). So the pricing row does double duty — cost data and provider routing.
-3. Register the models for use as in "A new model" above: tier them in `pipeline.yaml`
-   (a pricing row alone prices a model but does not put it in `llm_call_mapping`).
+3. Select the models as in "A new model" above: tier them in `pipeline.yaml`, or
+   name them with `--model` (a pricing row registers a model; it selects nothing).
 
 Transport belongs in the provider layer; do **not** add an `LLMCall` subclass — the
 per-vendor `OpenAICall`/`ClaudeCall` classes were deleted precisely because they

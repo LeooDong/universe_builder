@@ -99,7 +99,10 @@ Part of [ARCHITECTURE.md](../../ARCHITECTURE.md); the index there lists every pa
   a compatibility export of the generic file. Sync and batch expansion
   share `expansion_instructions`; `BatchItem.user_instructions` stays volatile.
 - **Model pricing** — `src/universe_builder/providers/model_pricing.json`, with a checked-on date in
-  the file. Cost estimates are indicative; re-verify before acting on them.
+  the file. Cost estimates are indicative; re-verify before acting on them. A pack's
+  `model_pricing_path`, then the file `UNIVERSE_BUILDER_MODEL_PRICING` names, add or
+  replace rows over it (v0.9.0; §6 "A new model"). Tests clear the variable
+  (`conftest.engine_pricing_only`).
 - **Batch handles** — `data/automated/<domain>/_batches/*.json`, one per submitted batch.
   Durable by design so a batch can be collected by a later process: there is no
   need to hold a session open, and `collect --all` polls each handle itself and
