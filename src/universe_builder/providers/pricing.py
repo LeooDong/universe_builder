@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import logging
+import math
 import os
 from dataclasses import dataclass
 from pathlib import Path
@@ -88,7 +89,9 @@ def _load(path: Path) -> dict[str, ModelInfo]:
 
 
 def _is_number(value) -> bool:
-    return isinstance(value, (int, float)) and not isinstance(value, bool)
+    """A finite int or float: `json` reads NaN and Infinity, which pass every
+    range comparison, so they are refused here."""
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
 
 
 def _is_count(value) -> bool:
